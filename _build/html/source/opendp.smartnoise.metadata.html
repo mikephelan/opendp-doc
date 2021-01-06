@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opendp.smartnoise.metadata package &#8212; OpenDP 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="opendp-smartnoise-metadata-package">
+<h1>opendp.smartnoise.metadata package<a class="headerlink" href="#opendp-smartnoise-metadata-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.metadata.collection">
+<span id="opendp-smartnoise-metadata-collection-module"></span><h2>opendp.smartnoise.metadata.collection module<a class="headerlink" href="#module-opendp.smartnoise.metadata.collection" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.Boolean">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">Boolean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">is_key</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bounded</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A column with True/False data</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.Boolean.typename">
+<code class="sig-name descname">typename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Boolean.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.CollectionMetadata">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">CollectionMetadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tables</span></em>, <em class="sig-param"><span class="n">engine</span></em>, <em class="sig-param"><span class="n">compare</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Information about a collection of tabular data sources</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.CollectionMetadata.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">schema_dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionMetadata.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the metadata from a dict object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.CollectionMetadata.from_file">
+<em class="property">static </em><code class="sig-name descname">from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionMetadata.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the metadata about this collection from a YAML file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.CollectionMetadata.tables">
+<code class="sig-name descname">tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionMetadata.tables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.CollectionMetadata.to_file">
+<code class="sig-name descname">to_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">collection_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionMetadata.to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save collection metadata to a YAML file</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.CollectionYamlLoader">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">CollectionYamlLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionYamlLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.CollectionYamlLoader.load_column">
+<code class="sig-name descname">load_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column</span></em>, <em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionYamlLoader.load_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.CollectionYamlLoader.load_table">
+<code class="sig-name descname">load_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">schema</span></em>, <em class="sig-param"><span class="n">table</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionYamlLoader.load_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.CollectionYamlLoader.read_file">
+<code class="sig-name descname">read_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionYamlLoader.read_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.CollectionYamlLoader.write_file">
+<code class="sig-name descname">write_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection_metadata</span></em>, <em class="sig-param"><span class="n">collection_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.CollectionYamlLoader.write_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.DateTime">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">DateTime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">is_key</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bounded</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.DateTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A date/time column</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.DateTime.typename">
+<code class="sig-name descname">typename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.DateTime.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.Float">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">Float</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">minval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">is_key</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bounded</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A floating point column</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.Float.typename">
+<code class="sig-name descname">typename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Float.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.Int">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">Int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">minval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">is_key</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bounded</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A column with integer data</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.Int.typename">
+<code class="sig-name descname">typename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Int.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.String">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">String</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">card</span></em>, <em class="sig-param"><span class="n">is_key</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bounded</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.String" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A column with string data</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.String.typename">
+<code class="sig-name descname">typename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.String.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.Table">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">Table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">schema</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">rowcount</span></em>, <em class="sig-param"><span class="n">columns</span></em>, <em class="sig-param"><span class="n">row_privacy</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_ids</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">sample_max_ids</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">rows_exact</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Information about a single tabular data source</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.Table.columns">
+<code class="sig-name descname">columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Table.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.Table.key_cols">
+<code class="sig-name descname">key_cols</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Table.key_cols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.Table.table_name">
+<code class="sig-name descname">table_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Table.table_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.collection.Unknown">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.collection.</code><code class="sig-name descname">Unknown</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Column is unknown type.  Will be ignored.  May not be used in queries.</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.collection.Unknown.typename">
+<code class="sig-name descname">typename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.collection.Unknown.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.metadata.sql_reserved">
+<span id="opendp-smartnoise-metadata-sql-reserved-module"></span><h2>opendp.smartnoise.metadata.sql_reserved module<a class="headerlink" href="#module-opendp.smartnoise.metadata.sql_reserved" title="Permalink to this headline">¶</a></h2>
+<p>List of SQL reserved keywords that need to be escaped in object names.
+This is used for metadata inference, but may be incorporated in the DataReader
+interface at some point.</p>
+</div>
+<div class="section" id="module-opendp.smartnoise.metadata">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opendp.smartnoise.metadata" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.metadata.CollectionMetadata">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.metadata.</code><code class="sig-name descname">CollectionMetadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tables</span></em>, <em class="sig-param"><span class="n">engine</span></em>, <em class="sig-param"><span class="n">compare</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.CollectionMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Information about a collection of tabular data sources</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.CollectionMetadata.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">schema_dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.CollectionMetadata.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the metadata from a dict object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.CollectionMetadata.from_file">
+<em class="property">static </em><code class="sig-name descname">from_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.CollectionMetadata.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the metadata about this collection from a YAML file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.CollectionMetadata.tables">
+<code class="sig-name descname">tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.CollectionMetadata.tables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.metadata.CollectionMetadata.to_file">
+<code class="sig-name descname">to_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">collection_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.metadata.CollectionMetadata.to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save collection metadata to a YAML file</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">OpenDP</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joshua Allen, Ethan Cowan, Christian Covington, Eduardo de Leon, Ira Globus-Harris, James Honaker, Jason Huang, Ellen Kraffmiller, Saniya Movahed, Michael Phelan, Raman Prasad, Michael Shoemate, Robert Treacy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/opendp.smartnoise.metadata.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

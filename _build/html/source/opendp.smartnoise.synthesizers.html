@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opendp.smartnoise.synthesizers package &#8212; OpenDP 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="opendp-smartnoise-synthesizers-package">
+<h1>opendp.smartnoise.synthesizers package<a class="headerlink" href="#opendp-smartnoise-synthesizers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="opendp.smartnoise.synthesizers.preprocessors.html">opendp.smartnoise.synthesizers.preprocessors package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.synthesizers.preprocessors.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.synthesizers.preprocessors.html#opendp-smartnoise-synthesizers-preprocessors-preprocessing-module">opendp.smartnoise.synthesizers.preprocessors.preprocessing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.synthesizers.preprocessors.html#module-opendp.smartnoise.synthesizers.preprocessors">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.html">opendp.smartnoise.synthesizers.pytorch package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.nn.html">opendp.smartnoise.synthesizers.pytorch.nn package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.nn.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.nn.html#opendp-smartnoise-synthesizers-pytorch-nn-dpctgan-module">opendp.smartnoise.synthesizers.pytorch.nn.dpctgan module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.nn.html#opendp-smartnoise-synthesizers-pytorch-nn-patectgan-module">opendp.smartnoise.synthesizers.pytorch.nn.patectgan module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.nn.html#opendp-smartnoise-synthesizers-pytorch-nn-privacy-utils-module">opendp.smartnoise.synthesizers.pytorch.nn.privacy_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.nn.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.html#opendp-smartnoise-synthesizers-pytorch-pytorch-synthesizer-module">opendp.smartnoise.synthesizers.pytorch.pytorch_synthesizer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.synthesizers.pytorch.html#module-opendp.smartnoise.synthesizers.pytorch">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.synthesizers.base">
+<span id="opendp-smartnoise-synthesizers-base-module"></span><h2>opendp.smartnoise.synthesizers.base module<a class="headerlink" href="#module-opendp.smartnoise.synthesizers.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.synthesizers.base.</code><code class="sig-name descname">SDGYMBaseSynthesizer</code><a class="headerlink" href="#opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base for SmartNoise Synthesizers, based off of SDGymBaseSynthesizer
+(to allow for benchmarking)</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">categorical_columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ordinal_columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fits some data to synthetic data model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer.fit_sample">
+<code class="sig-name descname">fit_sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">categorical_columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ordinal_columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer.fit_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common use case. Fits a synthetic data model to data, and returns
+# of samples equal to size of original dataset.
+Note data must be numpy array.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">samples</span></em>, <em class="sig-param"><span class="n">categorical_columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ordinal_columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produces n (samples) using the fitted synthetic data model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.synthesizers.mwem">
+<span id="opendp-smartnoise-synthesizers-mwem-module"></span><h2>opendp.smartnoise.synthesizers.mwem module<a class="headerlink" href="#module-opendp.smartnoise.synthesizers.mwem" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.synthesizers.mwem.MWEMSynthesizer">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.synthesizers.mwem.</code><code class="sig-name descname">MWEMSynthesizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Q_count</span><span class="o">=</span><span class="default_value">400</span></em>, <em class="sig-param"><span class="n">epsilon</span><span class="o">=</span><span class="default_value">3.0</span></em>, <em class="sig-param"><span class="n">iterations</span><span class="o">=</span><span class="default_value">30</span></em>, <em class="sig-param"><span class="n">mult_weights_iterations</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">splits</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">split_factor</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_bin_count</span><span class="o">=</span><span class="default_value">500</span></em>, <em class="sig-param"><span class="n">custom_bin_count</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.synthesizers.mwem.MWEMSynthesizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer" title="opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.synthesizers.base.SDGYMBaseSynthesizer</span></code></a></p>
+<p>N-Dimensional numpy implementation of MWEM.
+(<a class="reference external" href="http://users.cms.caltech.edu/~katrina/papers/mwem-nips.pdf">http://users.cms.caltech.edu/~katrina/papers/mwem-nips.pdf</a>)</p>
+<p>From the paper:
+“[MWEM is] a broadly applicable, simple, and easy-to-implement algorithm, capable of
+substantially improving the performance of linear queries on many realistic datasets…
+(circa 2012)…MWEM matches the best known and nearly
+optimal theoretical accuracy guarantees for differentially private
+data analysis with linear queries.”</p>
+<p>Linear queries used for sampling in this implementation are
+random contiguous slices of the n-dimensional numpy array.</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.synthesizers.mwem.MWEMSynthesizer.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">categorical_columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ordinal_columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.synthesizers.mwem.MWEMSynthesizer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a synthetic histogram distribution, based on the original data.
+Follows sdgym schema to be compatible with their benchmark system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>np.ndarray</em>) – Dataset to use as basis for synthetic data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>synthetic data, real data histograms</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.synthesizers.mwem.MWEMSynthesizer.mwem">
+<code class="sig-name descname">mwem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.synthesizers.mwem.MWEMSynthesizer.mwem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runner for the mwem algorithm.</p>
+<p>Initializes the synthetic histogram, and updates it
+for self.iterations using the exponential mechanism and
+multiplicative weights. Draws from the initialized query store
+for measurements.
+:return: A, self.histogram - A is the synthetic data histogram, self.histogram is original histo
+:rtype: np.ndarray, np.ndarray</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.synthesizers.mwem.MWEMSynthesizer.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">samples</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.synthesizers.mwem.MWEMSynthesizer.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates samples from the histogram data.
+Follows sdgym schema to be compatible with their benchmark system.</p>
+<p>NOTE: We are sampleing from each split dimensional
+group as though they are <em>independent</em> from one another.
+We have essentially created len(splits) DP histograms as
+if they are separate databases, and combine the results into
+a single sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>samples</strong> (<em>int</em>) – Number of samples to generate</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>N samples</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.synthesizers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opendp.smartnoise.synthesizers" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">OpenDP</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joshua Allen, Ethan Cowan, Christian Covington, Eduardo de Leon, Ira Globus-Harris, James Honaker, Jason Huang, Ellen Kraffmiller, Saniya Movahed, Michael Phelan, Raman Prasad, Michael Shoemate, Robert Treacy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/opendp.smartnoise.synthesizers.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

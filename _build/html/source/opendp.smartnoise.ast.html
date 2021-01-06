@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opendp.smartnoise.ast package &#8212; OpenDP 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="opendp-smartnoise-ast-package">
+<h1>opendp.smartnoise.ast package<a class="headerlink" href="#opendp-smartnoise-ast-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="opendp.smartnoise.ast.expressions.html">opendp.smartnoise.ast.expressions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.ast.expressions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.ast.expressions.html#module-opendp.smartnoise.ast.expressions.date">opendp.smartnoise.ast.expressions.date module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.ast.expressions.html#module-opendp.smartnoise.ast.expressions.logical">opendp.smartnoise.ast.expressions.logical module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.ast.expressions.html#module-opendp.smartnoise.ast.expressions.numeric">opendp.smartnoise.ast.expressions.numeric module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.ast.expressions.html#module-opendp.smartnoise.ast.expressions.sql">opendp.smartnoise.ast.expressions.sql module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.ast.expressions.html#module-opendp.smartnoise.ast.expressions.string">opendp.smartnoise.ast.expressions.string module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.ast.expressions.html#module-opendp.smartnoise.ast.expressions">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.ast.ast">
+<span id="opendp-smartnoise-ast-ast-module"></span><h2>opendp.smartnoise.ast.ast module<a class="headerlink" href="#module-opendp.smartnoise.ast.ast" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Aggregate">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Aggregate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groupingExpressions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Aggregate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<p>Group By</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Aggregate.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Aggregate.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Aggregate.groupedColumns">
+<code class="sig-name descname">groupedColumns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Aggregate.groupedColumns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.AliasedRelation">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">AliasedRelation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relation</span></em>, <em class="sig-param"><span class="n">alias</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.AliasedRelation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlRel" title="opendp.smartnoise.ast.tokens.SqlRel"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlRel</span></code></a></p>
+<p>A subrelation (table, join, or subquery) with optional alias</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.AliasedRelation.all_symbols">
+<code class="sig-name descname">all_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.AliasedRelation.all_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.AliasedRelation.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.AliasedRelation.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.AliasedRelation.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.AliasedRelation.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.AliasedSubquery">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">AliasedSubquery</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">alias</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.AliasedSubquery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlRel" title="opendp.smartnoise.ast.tokens.SqlRel"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlRel</span></code></a></p>
+<p>A subquery with optional alias</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.AliasedSubquery.all_symbols">
+<code class="sig-name descname">all_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.AliasedSubquery.all_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.AliasedSubquery.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.AliasedSubquery.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.AliasedSubquery.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.AliasedSubquery.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Batch">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Batch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">queries</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="#opendp.smartnoise.ast.ast.Query" title="opendp.smartnoise.ast.ast.Query">opendp.smartnoise.ast.ast.Query</a><span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<p>A batch of queries</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Batch.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Batch.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.From">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">From</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.From" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.From.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.From.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Having">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Having</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">condition</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Having" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<p>Having clause</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Having.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Having.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Join">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">joinType</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="n">criteria</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlRel" title="opendp.smartnoise.ast.tokens.SqlRel"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlRel</span></code></a></p>
+<p>A join expression attached to a primary relation</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Join.all_symbols">
+<code class="sig-name descname">all_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Join.all_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Join.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Join.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Join.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Join.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Limit">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Limit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Limit.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Limit.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Limit.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Limit.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Order">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Order</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sortItems</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<p>Order By</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Order.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Order.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Order.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Order.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Query">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">select</span></em>, <em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">where</span></em>, <em class="sig-param"><span class="n">agg</span></em>, <em class="sig-param"><span class="n">having</span></em>, <em class="sig-param"><span class="n">order</span></em>, <em class="sig-param"><span class="n">limit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlRel" title="opendp.smartnoise.ast.tokens.SqlRel"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlRel</span></code></a></p>
+<p>A single query</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Query.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Any<span class="p">]</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Query.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Query.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bindings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Query.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Query.keycount_symbols">
+<code class="sig-name descname">keycount_symbols</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Query.keycount_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Query.load_symbols">
+<code class="sig-name descname">load_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Query.load_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Query.numeric_symbols">
+<code class="sig-name descname">numeric_symbols</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Query.numeric_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Query.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Query.symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the expression for an output column in the SELECT statement.
+Query objects do not have aliases, so caller must strip alias first.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Relation">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Relation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">primary</span></em>, <em class="sig-param"><span class="n">joins</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlRel" title="opendp.smartnoise.ast.tokens.SqlRel"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlRel</span></code></a></p>
+<p>A relation such as table, join, or subquery</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Relation.all_symbols">
+<code class="sig-name descname">all_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Relation.all_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Relation.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Relation.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Relation.load_symbols">
+<code class="sig-name descname">load_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Relation.load_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Relation.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Relation.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Select">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Select</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantifier</span></em>, <em class="sig-param"><span class="n">namedExpressions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<p>Result Columns</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Select.aggregates">
+<code class="sig-name descname">aggregates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Select.aggregates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Select.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Select.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Select.functions">
+<code class="sig-name descname">functions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Select.functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Table">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">alias</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlRel" title="opendp.smartnoise.ast.tokens.SqlRel"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlRel</span></code></a></p>
+<p>A fully qualified table name with optional alias</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Table.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Table.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Table.escaped">
+<code class="sig-name descname">escaped</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Table.escaped" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Table.load_symbols">
+<code class="sig-name descname">load_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Table.load_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Table.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Table.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.TableColumn">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">TableColumn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tablename</span></em>, <em class="sig-param"><span class="n">colname</span></em>, <em class="sig-param"><span class="n">valtype</span><span class="o">=</span><span class="default_value">'unknown'</span></em>, <em class="sig-param"><span class="n">is_key</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">minval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_ids</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">sample_max_ids</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">row_privacy</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">compare</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.TableColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlExpr" title="opendp.smartnoise.ast.tokens.SqlExpr"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlExpr</span></code></a></p>
+<p>A column attached to a fully qualified table</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.TableColumn.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bindings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.TableColumn.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.TableColumn.is_count">
+<em class="property">property </em><code class="sig-name descname">is_count</code><a class="headerlink" href="#opendp.smartnoise.ast.ast.TableColumn.is_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.TableColumn.is_key_count">
+<em class="property">property </em><code class="sig-name descname">is_key_count</code><a class="headerlink" href="#opendp.smartnoise.ast.ast.TableColumn.is_key_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.TableColumn.sensitivity">
+<code class="sig-name descname">sensitivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.TableColumn.sensitivity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.TableColumn.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.TableColumn.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Top">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Top</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Top.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Top.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Top.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Top.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.ast.Where">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.ast.</code><code class="sig-name descname">Where</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">condition</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Where" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<p>Predicates.</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.ast.Where.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.ast.Where.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.ast.expression">
+<span id="opendp-smartnoise-ast-expression-module"></span><h2>opendp.smartnoise.ast.expression module<a class="headerlink" href="#module-opendp.smartnoise.ast.expression" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.expression.Expression">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.expression.</code><code class="sig-name descname">Expression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fragment</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.Expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlExpr" title="opendp.smartnoise.ast.tokens.SqlExpr"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlExpr</span></code></a></p>
+<p>A bare expression with no name</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.Expression.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.Expression.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.expression.NamedExpression">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.expression.</code><code class="sig-name descname">NamedExpression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">expression</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="#opendp.smartnoise.ast.expression.Expression" title="opendp.smartnoise.ast.expression.Expression">opendp.smartnoise.ast.expression.Expression</a><span class="p">, </span><a class="reference internal" href="#opendp.smartnoise.ast.tokens.Column" title="opendp.smartnoise.ast.tokens.Column">opendp.smartnoise.ast.tokens.Column</a><span class="p">, </span><a class="reference internal" href="opendp.smartnoise.ast.expressions.html#opendp.smartnoise.ast.expressions.numeric.ArithmeticExpression" title="opendp.smartnoise.ast.expressions.numeric.ArithmeticExpression">opendp.smartnoise.ast.expressions.numeric.ArithmeticExpression</a><span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NamedExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlExpr" title="opendp.smartnoise.ast.tokens.SqlExpr"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlExpr</span></code></a></p>
+<p>An expression with optional name</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NamedExpression.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NamedExpression.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NamedExpression.column_name">
+<code class="sig-name descname">column_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NamedExpression.column_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NamedExpression.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bindings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NamedExpression.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NamedExpression.is_count">
+<em class="property">property </em><code class="sig-name descname">is_count</code><a class="headerlink" href="#opendp.smartnoise.ast.expression.NamedExpression.is_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NamedExpression.is_key_count">
+<em class="property">property </em><code class="sig-name descname">is_key_count</code><a class="headerlink" href="#opendp.smartnoise.ast.expression.NamedExpression.is_key_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NamedExpression.sensitivity">
+<code class="sig-name descname">sensitivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NamedExpression.sensitivity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NamedExpression.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NamedExpression.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.expression.NestedExpression">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.expression.</code><code class="sig-name descname">NestedExpression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NestedExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlExpr" title="opendp.smartnoise.ast.tokens.SqlExpr"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlExpr</span></code></a></p>
+<p>A nested expression with no name</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NestedExpression.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NestedExpression.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NestedExpression.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bindings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NestedExpression.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NestedExpression.is_count">
+<em class="property">property </em><code class="sig-name descname">is_count</code><a class="headerlink" href="#opendp.smartnoise.ast.expression.NestedExpression.is_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NestedExpression.is_key_count">
+<em class="property">property </em><code class="sig-name descname">is_key_count</code><a class="headerlink" href="#opendp.smartnoise.ast.expression.NestedExpression.is_key_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NestedExpression.sensitivity">
+<code class="sig-name descname">sensitivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NestedExpression.sensitivity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NestedExpression.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NestedExpression.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.expression.NestedExpression.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.expression.NestedExpression.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.ast.tokens">
+<span id="opendp-smartnoise-ast-tokens-module"></span><h2>opendp.smartnoise.ast.tokens module<a class="headerlink" href="#module-opendp.smartnoise.ast.tokens" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.Column">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">Column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlExpr" title="opendp.smartnoise.ast.tokens.SqlExpr"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlExpr</span></code></a></p>
+<p>A fully qualified column name</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Column.escaped">
+<code class="sig-name descname">escaped</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Column.escaped" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Column.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bindings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Column.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Column.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Column.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Column.symbol_name">
+<code class="sig-name descname">symbol_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Column.symbol_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.FuncName">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">FuncName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.FuncName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.FuncName.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.FuncName.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.Identifier">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">Identifier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Identifier.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Identifier.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.Literal">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">Literal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Literal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.SqlExpr" title="opendp.smartnoise.ast.tokens.SqlExpr"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.SqlExpr</span></code></a></p>
+<p>A literal used in an expression</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Literal.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bindings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Literal.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Literal.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Literal.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Literal.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Literal.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.Op">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">Op</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Op" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Op.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Op.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.Seq">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">Seq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seq</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Seq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Seq.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Seq.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Seq.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Seq.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.Sql">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">Sql</code><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>base type for all Sql AST nodes</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Sql.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Sql.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Sql.find_node">
+<code class="sig-name descname">find_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Sql.find_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Walks the tree and returns the first node
+that is an instance of the specified type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Sql.find_nodes">
+<code class="sig-name descname">find_nodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">not_child_of</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Sql.find_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Walks the tree and returns all nodes
+that are an instance of the specified type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Sql.symbol_name">
+<code class="sig-name descname">symbol_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Sql.symbol_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.SqlExpr">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">SqlExpr</code><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlExpr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<p>Base type for all SQL expressions</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlExpr.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlExpr.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlExpr.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bindings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlExpr.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlExpr.is_count">
+<em class="property">property </em><code class="sig-name descname">is_count</code><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlExpr.is_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlExpr.is_key_count">
+<em class="property">property </em><code class="sig-name descname">is_key_count</code><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlExpr.is_key_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlExpr.sensitivity">
+<code class="sig-name descname">sensitivity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlExpr.sensitivity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlExpr.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlExpr.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlExpr.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlExpr.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.SqlRel">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">SqlRel</code><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlRel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.ast.tokens.Sql" title="opendp.smartnoise.ast.tokens.Sql"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.ast.tokens.Sql</span></code></a></p>
+<p>base type for all SQL relations</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlRel.alias_match">
+<code class="sig-name descname">alias_match</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlRel.alias_match" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlRel.all_symbols">
+<code class="sig-name descname">all_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlRel.all_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlRel.has_symbols">
+<code class="sig-name descname">has_symbols</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlRel.has_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlRel.load_symbols">
+<code class="sig-name descname">load_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlRel.load_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlRel.relations">
+<code class="sig-name descname">relations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlRel.relations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.SqlRel.split_alias">
+<code class="sig-name descname">split_alias</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.SqlRel.split_alias" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.tokens.Token">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">Token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.tokens.Token.children">
+<code class="sig-name descname">children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.Token.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.ast.tokens.flatten">
+<code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">flatten</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.flatten" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.ast.tokens.unique">
+<code class="sig-prename descclassname">opendp.smartnoise.ast.tokens.</code><code class="sig-name descname">unique</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.tokens.unique" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.ast.validate">
+<span id="opendp-smartnoise-ast-validate-module"></span><h2>opendp.smartnoise.ast.validate module<a class="headerlink" href="#module-opendp.smartnoise.ast.validate" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.validate.QueryConstraints">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.validate.</code><code class="sig-name descname">QueryConstraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.QueryConstraints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A collection of boolean functions that check for validity of
+a parsed Query AST.  Create the object by passing in the AST,
+then call any or all check functions.  Check functions pass
+or raise ValueError with descriptive message.</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.QueryConstraints.check_aggregate">
+<code class="sig-name descname">check_aggregate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.QueryConstraints.check_aggregate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.QueryConstraints.check_groupkey">
+<code class="sig-name descname">check_groupkey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.QueryConstraints.check_groupkey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.QueryConstraints.check_select_relations">
+<code class="sig-name descname">check_select_relations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.QueryConstraints.check_select_relations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.QueryConstraints.check_source_relations">
+<code class="sig-name descname">check_source_relations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.QueryConstraints.check_source_relations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.QueryConstraints.key_col">
+<code class="sig-name descname">key_col</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.QueryConstraints.key_col" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.QueryConstraints.validate_all">
+<code class="sig-name descname">validate_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.QueryConstraints.validate_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.QueryConstraints.walk_relations">
+<code class="sig-name descname">walk_relations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.QueryConstraints.walk_relations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.ast.validate.Validate">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.ast.validate.</code><code class="sig-name descname">Validate</code><a class="headerlink" href="#opendp.smartnoise.ast.validate.Validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Checks a batch AST for any violations of our query requirements
+and returns error messages.</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.Validate.validateBatch">
+<code class="sig-name descname">validateBatch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batch</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.Validate.validateBatch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.ast.validate.Validate.validateQuery">
+<code class="sig-name descname">validateQuery</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.ast.validate.Validate.validateQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks the AST for a SELECT query to ensure conformance with
+requirements for differential privacy queries.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.ast">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opendp.smartnoise.ast" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">OpenDP</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joshua Allen, Ethan Cowan, Christian Covington, Eduardo de Leon, Ira Globus-Harris, James Honaker, Jason Huang, Ellen Kraffmiller, Saniya Movahed, Michael Phelan, Raman Prasad, Michael Shoemate, Robert Treacy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/opendp.smartnoise.ast.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

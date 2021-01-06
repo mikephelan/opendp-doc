@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opendp.smartnoise.mechanisms package &#8212; OpenDP 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="opendp-smartnoise-mechanisms-package">
+<h1>opendp.smartnoise.mechanisms package<a class="headerlink" href="#opendp-smartnoise-mechanisms-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.mechanisms.base">
+<span id="opendp-smartnoise-mechanisms-base-module"></span><h2>opendp.smartnoise.mechanisms.base module<a class="headerlink" href="#module-opendp.smartnoise.mechanisms.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.mechanisms.base.</code><code class="sig-name descname">AdditiveNoiseMechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eps</span></em>, <em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">max_contrib</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">interval_widths</span><span class="o">=</span><span class="default_value">[0.95]</span></em>, <em class="sig-param"><span class="n">n_rows</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Adds noise to an exact aggregated quantity.</p>
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism.bounds">
+<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the error bounds, centered around 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism.release">
+<code class="sig-name descname">release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vals</span></em>, <em class="sig-param"><span class="n">accuracy</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds noise and releases values.</p>
+<p>Values must be pre-aggregated.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.mechanisms.gaussian">
+<span id="opendp-smartnoise-mechanisms-gaussian-module"></span><h2>opendp.smartnoise.mechanisms.gaussian module<a class="headerlink" href="#module-opendp.smartnoise.mechanisms.gaussian" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.mechanisms.gaussian.Gaussian">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.mechanisms.gaussian.</code><code class="sig-name descname">Gaussian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eps</span></em>, <em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">1e-16</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">max_contrib</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">interval_widths</span><span class="o">=</span><span class="default_value">[0.95]</span></em>, <em class="sig-param"><span class="n">n_rows</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.gaussian.Gaussian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism" title="opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism</span></code></a></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.gaussian.Gaussian.bounds">
+<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.gaussian.Gaussian.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the error bounds, centered around 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.gaussian.Gaussian.release">
+<code class="sig-name descname">release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vals</span></em>, <em class="sig-param"><span class="n">compute_accuracy</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.gaussian.Gaussian.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds noise and releases values.</p>
+<p>Values must be pre-aggregated.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.mechanisms.laplace">
+<span id="opendp-smartnoise-mechanisms-laplace-module"></span><h2>opendp.smartnoise.mechanisms.laplace module<a class="headerlink" href="#module-opendp.smartnoise.mechanisms.laplace" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.mechanisms.laplace.Laplace">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.mechanisms.laplace.</code><code class="sig-name descname">Laplace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eps</span></em>, <em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">max_contrib</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">interval_widths</span><span class="o">=</span><span class="default_value">[0.95]</span></em>, <em class="sig-param"><span class="n">n_rows</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.laplace.Laplace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism" title="opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism</span></code></a></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.laplace.Laplace.bounds">
+<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.laplace.Laplace.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the error bounds, centered around 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.laplace.Laplace.release">
+<code class="sig-name descname">release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vals</span></em>, <em class="sig-param"><span class="n">compute_accuracy</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.laplace.Laplace.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds noise and releases values.</p>
+<p>Values must be pre-aggregated.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.mechanisms.rand">
+<span id="opendp-smartnoise-mechanisms-rand-module"></span><h2>opendp.smartnoise.mechanisms.rand module<a class="headerlink" href="#module-opendp.smartnoise.mechanisms.rand" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="opendp.smartnoise.mechanisms.rand.laplace">
+<code class="sig-prename descclassname">opendp.smartnoise.mechanisms.rand.</code><code class="sig-name descname">laplace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em>, <em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.rand.laplace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.mechanisms.rand.normal">
+<code class="sig-prename descclassname">opendp.smartnoise.mechanisms.rand.</code><code class="sig-name descname">normal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loc</span></em>, <em class="sig-param"><span class="n">scale</span></em>, <em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.rand.normal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.mechanisms">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opendp.smartnoise.mechanisms" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.mechanisms.Gaussian">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.mechanisms.</code><code class="sig-name descname">Gaussian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eps</span></em>, <em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">1e-16</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">max_contrib</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">interval_widths</span><span class="o">=</span><span class="default_value">[0.95]</span></em>, <em class="sig-param"><span class="n">n_rows</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.Gaussian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism" title="opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism</span></code></a></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.Gaussian.bounds">
+<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.Gaussian.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the error bounds, centered around 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.Gaussian.release">
+<code class="sig-name descname">release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vals</span></em>, <em class="sig-param"><span class="n">compute_accuracy</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.Gaussian.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds noise and releases values.</p>
+<p>Values must be pre-aggregated.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.mechanisms.Laplace">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.mechanisms.</code><code class="sig-name descname">Laplace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eps</span></em>, <em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">max_contrib</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">interval_widths</span><span class="o">=</span><span class="default_value">[0.95]</span></em>, <em class="sig-param"><span class="n">n_rows</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.Laplace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism" title="opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism"><code class="xref py py-class docutils literal notranslate"><span class="pre">opendp.smartnoise.mechanisms.base.AdditiveNoiseMechanism</span></code></a></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.Laplace.bounds">
+<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.Laplace.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the error bounds, centered around 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.mechanisms.Laplace.release">
+<code class="sig-name descname">release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vals</span></em>, <em class="sig-param"><span class="n">compute_accuracy</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.mechanisms.Laplace.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds noise and releases values.</p>
+<p>Values must be pre-aggregated.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">OpenDP</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joshua Allen, Ethan Cowan, Christian Covington, Eduardo de Leon, Ira Globus-Harris, James Honaker, Jason Huang, Ellen Kraffmiller, Saniya Movahed, Michael Phelan, Raman Prasad, Michael Shoemate, Robert Treacy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/opendp.smartnoise.mechanisms.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

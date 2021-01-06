@@ -1,0 +1,2232 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opendp.smartnoise.core package &#8212; OpenDP 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="opendp-smartnoise-core-package">
+<h1>opendp.smartnoise.core package<a class="headerlink" href="#opendp-smartnoise-core-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.core.api">
+<span id="opendp-smartnoise-core-api-module"></span><h2>opendp.smartnoise.core.api module<a class="headerlink" href="#module-opendp.smartnoise.core.api" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.core.api.</code><code class="sig-name descname">LibraryWrapper</code><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.accuracy_to_privacy_usage">
+<code class="sig-name descname">accuracy_to_privacy_usage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">privacy_definition</span></em>, <em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">properties</span></em>, <em class="sig-param"><span class="n">accuracies</span></em>, <em class="sig-param"><span class="n">public_arguments</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.accuracy_to_privacy_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFI Helper. Estimate the privacy usage necessary to bound accuracy to a given value.
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>privacy_definition</strong> – A descriptive object defining neighboring, distance definitions</p></li>
+<li><p><strong>component</strong> – The component to compute accuracy for</p></li>
+<li><p><strong>properties</strong> – Properties about all of the arguments to the component</p></li>
+<li><p><strong>accuracies</strong> – A value and alpha to convert to privacy usage for each column</p></li>
+<li><p><strong>public_arguments</strong> – Public inputs to the component (like lower/upper for snapping)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A privacy usage response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.analytic_gaussian_mechanism">
+<code class="sig-name descname">analytic_gaussian_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">epsilon</span></em>, <em class="sig-param"><span class="n">delta</span></em>, <em class="sig-param"><span class="n">sensitivity</span></em>, <em class="sig-param"><span class="n">enforce_constant_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.analytic_gaussian_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Direct api to access the analytic gaussian mechanism.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – float scalar to privatize</p></li>
+<li><p><strong>epsilon</strong> – float privacy parameter</p></li>
+<li><p><strong>delta</strong> – float privacy parameter</p></li>
+<li><p><strong>sensitivity</strong> – float L2 sensitivity</p></li>
+<li><p><strong>enforce_constant_time</strong> – ensure all calls take the same elapsed time</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>privatized float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.compute_privacy_usage">
+<code class="sig-name descname">compute_privacy_usage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis</span></em>, <em class="sig-param"><span class="n">release</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.compute_privacy_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFI Helper. Compute the overall privacy usage of an analysis.
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analysis</strong> – A description of computation</p></li>
+<li><p><strong>release</strong> – A collection of public values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A privacy usage response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.compute_release">
+<code class="sig-name descname">compute_release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis</span></em>, <em class="sig-param"><span class="n">release</span></em>, <em class="sig-param"><span class="n">stack_trace</span></em>, <em class="sig-param"><span class="n">filter_level</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.compute_release" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFI Helper. Evaluate an analysis and release the differentially private results.
+This function touches private data. It calls the runtime rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analysis</strong> – A description of computation</p></li>
+<li><p><strong>release</strong> – A collection of public values</p></li>
+<li><p><strong>stack_trace</strong> – Set to False to suppress stack traces</p></li>
+<li><p><strong>filter_level</strong> – Configures how much data should be included in the release</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A response containing an updated release</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.gaussian_mechanism">
+<code class="sig-name descname">gaussian_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">epsilon</span></em>, <em class="sig-param"><span class="n">delta</span></em>, <em class="sig-param"><span class="n">sensitivity</span></em>, <em class="sig-param"><span class="n">enforce_constant_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.gaussian_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Direct api to access the gaussian mechanism.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – float scalar to privatize</p></li>
+<li><p><strong>epsilon</strong> – float privacy parameter</p></li>
+<li><p><strong>delta</strong> – float privacy parameter</p></li>
+<li><p><strong>sensitivity</strong> – float L2 sensitivity</p></li>
+<li><p><strong>enforce_constant_time</strong> – ensure all calls take the same elapsed time</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>privatized float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.generate_report">
+<code class="sig-name descname">generate_report</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis</span></em>, <em class="sig-param"><span class="n">release</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.generate_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFI Helper. Generate a json string with a summary/report of the Analysis and Release
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analysis</strong> – A description of computation</p></li>
+<li><p><strong>release</strong> – A collection of public values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A protobuf response containing a json summary string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.get_properties">
+<code class="sig-name descname">get_properties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis</span></em>, <em class="sig-param"><span class="n">release</span></em>, <em class="sig-param"><span class="n">node_ids</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.get_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFI Helper. Derive static properties for all components in the graph.
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analysis</strong> – A description of computation</p></li>
+<li><p><strong>release</strong> – A collection of public values</p></li>
+<li><p><strong>node_ids</strong> – An optional list of node ids to derive properties for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary of property sets, one set of properties per component</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.laplace_mechanism">
+<code class="sig-name descname">laplace_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">epsilon</span></em>, <em class="sig-param"><span class="n">sensitivity</span></em>, <em class="sig-param"><span class="n">enforce_constant_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.laplace_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Direct api to access the laplace mechanism.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – float scalar to privatize</p></li>
+<li><p><strong>epsilon</strong> – float privacy parameter</p></li>
+<li><p><strong>sensitivity</strong> – float L1 sensitivity</p></li>
+<li><p><strong>enforce_constant_time</strong> – ensure all calls take the same elapsed time</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>privatized float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.privacy_usage_to_accuracy">
+<code class="sig-name descname">privacy_usage_to_accuracy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">privacy_definition</span></em>, <em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">properties</span></em>, <em class="sig-param"><span class="n">public_arguments</span></em>, <em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.privacy_usage_to_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFI Helper. Estimate the accuracy of the release of a component, based on a privacy usage.
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>privacy_definition</strong> – A descriptive object defining neighboring, distance definitions</p></li>
+<li><p><strong>component</strong> – The component to compute accuracy for</p></li>
+<li><p><strong>properties</strong> – Properties about all of the arguments to the component</p></li>
+<li><p><strong>public_arguments</strong> – Public inputs to the component (like lower/upper for snapping)</p></li>
+<li><p><strong>alpha</strong> – Used to set the confidence level for the accuracy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Accuracy estimates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.simple_geometric_mechanism">
+<code class="sig-name descname">simple_geometric_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">epsilon</span></em>, <em class="sig-param"><span class="n">sensitivity</span></em>, <em class="sig-param"><span class="n">min</span></em>, <em class="sig-param"><span class="n">max</span></em>, <em class="sig-param"><span class="n">enforce_constant_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.simple_geometric_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Direct api to access the simple geometric mechanism.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – integer scalar to privatize</p></li>
+<li><p><strong>epsilon</strong> – float privacy parameter</p></li>
+<li><p><strong>sensitivity</strong> – float L1 sensitivity</p></li>
+<li><p><strong>min</strong> – lower bound on the statistic</p></li>
+<li><p><strong>max</strong> – upper bound on the statistic</p></li>
+<li><p><strong>enforce_constant_time</strong> – ensure all calls take the same elapsed time</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>privatized integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.snapping_mechanism">
+<code class="sig-name descname">snapping_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">epsilon</span></em>, <em class="sig-param"><span class="n">sensitivity</span></em>, <em class="sig-param"><span class="n">min</span></em>, <em class="sig-param"><span class="n">max</span></em>, <em class="sig-param"><span class="n">enforce_constant_time</span></em>, <em class="sig-param"><span class="n">binding_probability</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.snapping_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Direct api to access the snapping mechanism.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – float scalar to privatize</p></li>
+<li><p><strong>epsilon</strong> – float privacy parameter</p></li>
+<li><p><strong>sensitivity</strong> – float L1 sensitivity</p></li>
+<li><p><strong>min</strong> – lower bound on the statistic</p></li>
+<li><p><strong>max</strong> – upper bound on the statistic</p></li>
+<li><p><strong>enforce_constant_time</strong> – ensure all calls take the same elapsed time</p></li>
+<li><p><strong>binding_probability</strong> – optional float to scale clamping bounds based on the probability of the clamp binding</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>privatized float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.api.LibraryWrapper.validate_analysis">
+<code class="sig-name descname">validate_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis</span></em>, <em class="sig-param"><span class="n">release</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.LibraryWrapper.validate_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFI Helper. Check if an analysis is differentially private, given a set of released values.
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analysis</strong> – A description of computation</p></li>
+<li><p><strong>release</strong> – A collection of public values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A success or failure response</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.api.format_error">
+<code class="sig-prename descclassname">opendp.smartnoise.core.api.</code><code class="sig-name descname">format_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.api.format_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.core.api_pb2">
+<span id="opendp-smartnoise-core-api-pb2-module"></span><h2>opendp.smartnoise.core.api_pb2 module<a class="headerlink" href="#module-opendp.smartnoise.core.api_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.core.base">
+<span id="opendp-smartnoise-core-base-module"></span><h2>opendp.smartnoise.core.base module<a class="headerlink" href="#module-opendp.smartnoise.core.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.core.base.Analysis">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.core.base.</code><code class="sig-name descname">Analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">dynamic</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">eager</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">neighboring</span><span class="o">=</span><span class="default_value">'substitute'</span></em>, <em class="sig-param"><span class="n">group_size</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">filter_level</span><span class="o">=</span><span class="default_value">'public'</span></em>, <em class="sig-param"><span class="n">protect_floating_point</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">protect_elapsed_time</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">protect_sensitivity</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">stack_traces</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">strict_parameter_checks</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Top-level class that contains a definition of privacy and collection of statistics.
+This class tracks cumulative privacy usage for all components within.</p>
+<p>The dynamic flag makes the library easier to use, because multiple batches may be strung together before calling release().
+However, it opens the execution up to potential side channel timing attacks. Disable this if side channels are a concern.</p>
+<p>The eager flag makes the library easier to debug, because stack traces pass through malformed components.
+As a library user, it may be useful to enable eager and find a small, similar public dataset to help shape your analysis.
+Building an analysis with a large dataset and eager enabled is not recommended, because the analysis is re-executed for each additional node.</p>
+<p><cite>filter_level</cite> determines what data is included in the release:</p>
+<ul class="simple">
+<li><p><cite>public</cite> only newly released public data is included in the release</p></li>
+<li><p><cite>public_and_prior</cite> will also retain private values previously included in the release</p></li>
+<li><p><cite>all</cite> for including all evaluations from all nodes, which is useful for system debugging</p></li>
+</ul>
+<p>There are several arguments for enabling/disabling individual protections.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><cite>protect_floating_point</cite> (enabled by default):</dt><dd><ul>
+<li><p>if enabled, disables the runtime if the runtime was not compiled against mpfr</p></li>
+<li><p>if enabled, prevents the usage of the laplace and gaussian mechanisms</p></li>
+<li><p>if enabled, noise-addition statistics on floating point numbers default to the snapping mechanism</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>protect_sensitivity</cite> (enabled by default):</dt><dd><ul>
+<li><p>if enabled, users may not pass custom sensitivities to mechanisms</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>protect_elapsed_time</cite> (disabled by default):</dt><dd><ul>
+<li><p>if enabled, forces all computations to run in constant time, regardless of the private dataset</p></li>
+<li><p>WARNING: this feature is still in development. Some components (like resize) may still have different execution times on neighboring datasets.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>strict_parameter_checks</cite> (enabled by default):</dt><dd><ul>
+<li><p>if enabled, analyses may not consume more then epsilon=1, or delta greater than a value proportional to the number of records</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>stack_traces</cite> (enabled by default):</dt><dd><ul>
+<li><p>Disable stack traces to limit the amount of private information leaked should an error be encountered.</p></li>
+<li><p>This only turns off stack traces from the runtime- the rest of the library is not affected.</p></li>
+<li><p>The library does not take epsilon consumed from errors into account</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dynamic</strong> – flag for enabling dynamic validation</p></li>
+<li><p><strong>eager</strong> – release every time a component is added</p></li>
+<li><p><strong>neighboring</strong> – may be <cite>substitute</cite> or <cite>add_remove</cite></p></li>
+<li><p><strong>group_size</strong> – number of individuals to protect simultaneously</p></li>
+<li><p><strong>filter_level</strong> – may be <cite>public</cite>, <cite>public_and_prior</cite> or <cite>all</cite></p></li>
+<li><p><strong>protect_floating_point</strong> – enable for protection against floating point attacks</p></li>
+<li><p><strong>protect_elapsed_time</strong> – enable for protection against side-channel timing attacks</p></li>
+<li><p><strong>protect_sensitivity</strong> – disable to pass custom sensitivities</p></li>
+<li><p><strong>stack_traces</strong> – set to False to suppress potentially sensitive stack traces</p></li>
+<li><p><strong>strict_parameter_checks</strong> – enable this to fail when some soft privacy violations are detected</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.add_component">
+<code class="sig-name descname">add_component</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_format</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_public</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.add_component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every component must be contained in an analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>component</strong> – The description of computation</p></li>
+<li><p><strong>value</strong> – Optionally, the result of the computation.</p></li>
+<li><p><strong>value_format</strong> – Optionally, the format of the result of the computation- <cite>array</cite> <cite>indexmap</cite> <cite>jagged</cite></p></li>
+<li><p><strong>value_public</strong> – set to true if the value is considered public</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.clean">
+<code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all nodes from the analysis that do not have public descendants with released values.</p>
+<p>This can be helpful to clear away components that fail property checks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.enter">
+<code class="sig-name descname">enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.enter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the current analysis as active.
+This allows building analyses outside of context managers, in a REPL environment.
+All new Components will be attributed to the entered analysis.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.exit">
+<code class="sig-name descname">exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the current analysis as inactive.</p>
+<p>Components constructed after exit() will not longer be attributed to the previously active analysis.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visual utility for graphing the analysis. Each component is a node, and arguments are edges.
+networkx and matplotlib are necessary, but must be installed separately</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.print_warnings">
+<code class="sig-name descname">print_warnings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.print_warnings" title="Permalink to this definition">¶</a></dt>
+<dd><p>print internal warnings about failed nodes after running the graph dynamically</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.privacy_usage">
+<em class="property">property </em><code class="sig-name descname">privacy_usage</code><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.privacy_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the overall privacy usage of an analysis.
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A privacy usage response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.release">
+<code class="sig-name descname">release</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate an analysis and release the differentially private results.
+This function touches private data. It calls the runtime rust FFI with protobuf objects.</p>
+<p>The response is stored internally in the analysis instance and the all further components are computed in the next batch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.report">
+<code class="sig-name descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.report" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFI Helper. Generate a json string with a summary/report of the Analysis and Release
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>parsed JSON array of summaries of releases</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.update_properties">
+<code class="sig-name descname">update_properties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">suppress_warnings</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.update_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>If new nodes have been added or there has been a release, recompute the properties for all of the components.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Analysis.validate">
+<code class="sig-name descname">validate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Analysis.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an analysis is differentially private, given a set of released values.
+This function is data agnostic. It calls the validator rust FFI with protobuf objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A success or failure response</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.core.base.Component">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.core.base.</code><code class="sig-name descname">Component</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">arguments</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">options</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">constraints</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_format</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_public</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Representation for the most atomic computation. There are helpers to construct these in components.py.</p>
+<p>The response from the helper functions are instances of this class.
+This class facilitates accessing releases, extending the graph, and viewing static properties.</p>
+<p>Many components are linked together to form an analysis graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The id of the component. A list of component id is here: <a class="reference external" href="https://opendifferentialprivacy.github.io/smartnoise-core/doc/smartnoise_validator/docs/components/index.html">https://opendifferentialprivacy.github.io/smartnoise-core/doc/smartnoise_validator/docs/components/index.html</a></p></li>
+<li><p><strong>arguments</strong> – Inputs to the component that come from prior nodes on the graph.</p></li>
+<li><p><strong>options</strong> – Inputs to the component that are passed directly via protobuf.</p></li>
+<li><p><strong>constraints</strong> – Additional modifiers on data inputs, like data_lower, or left_categories.</p></li>
+<li><p><strong>value</strong> – A value that is already known about the data, to be stored in the release.</p></li>
+<li><p><strong>value_format</strong> – The format of the value, one of <cite>array</cite>, <cite>jagged</cite>, <cite>indexmap</cite></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.actual_privacy_usage">
+<em class="property">property </em><code class="sig-name descname">actual_privacy_usage</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.actual_privacy_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>If a component is designed to potentially use less privacy usage than it was budgeted, this provides the reduced value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A privacy usage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.categories">
+<em class="property">property </em><code class="sig-name descname">categories</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>view the statically derived category set</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.data_type">
+<em class="property">property </em><code class="sig-name descname">data_type</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.data_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>view the statically derived data type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.dimensionality">
+<em class="property">property </em><code class="sig-name descname">dimensionality</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.dimensionality" title="Permalink to this definition">¶</a></dt>
+<dd><p>view the statically derived dimensionality (number of axes)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.from_accuracy">
+<code class="sig-name descname">from_accuracy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Component.from_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the privacy usage necessary such that the true value differs from the estimate by at most “value amount” with (1 - alpha)100% confidence</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.get_accuracy">
+<code class="sig-name descname">get_accuracy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Component.get_accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the accuracy for the values released by the component.
+The true value differs from the estimate by at most “accuracy amount” with (1 - alpha)100% confidence.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.get_parents">
+<code class="sig-name descname">get_parents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Component.get_parents" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all nodes that use this node as a dependency/argument.
+:return: {[node_id]: [parent]}</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.lower">
+<em class="property">property </em><code class="sig-name descname">lower</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.lower" title="Permalink to this definition">¶</a></dt>
+<dd><p>view the statically derived lower bound on the data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.nullity">
+<em class="property">property </em><code class="sig-name descname">nullity</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.nullity" title="Permalink to this definition">¶</a></dt>
+<dd><p>view the statically derived nullity property on the data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.num_columns">
+<em class="property">property </em><code class="sig-name descname">num_columns</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.num_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>view the statically derived number of columns</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.num_records">
+<em class="property">property </em><code class="sig-name descname">num_records</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.num_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>view the statically derived number of records</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.of">
+<em class="property">static </em><code class="sig-name descname">of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">value_format</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">public</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span><a class="reference internal" href="#opendp.smartnoise.core.base.Component" title="opendp.smartnoise.core.base.Component">opendp.smartnoise.core.base.Component</a><span class="p">]</span><a class="headerlink" href="#opendp.smartnoise.core.base.Component.of" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an array, list of lists, or dictionary, attempt to wrap it in a component and place the value in the release.
+Loose literals are by default public.
+This is an alternative constructor for a Literal, that potentially doesn’t wrap the value in a Literal component if it is None or already a Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value to be wrapped.</p></li>
+<li><p><strong>value_format</strong> – must be one of <cite>array</cite>, <cite>indexmap</cite>, <cite>jagged</cite></p></li>
+<li><p><strong>public</strong> – Loose literals are by default public.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A Literal component with the value attached to the parent analysis’ release.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.partition_keys">
+<em class="property">property </em><code class="sig-name descname">partition_keys</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.partition_keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>view protobuf representing all known properties of the component</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.releasable">
+<em class="property">property </em><code class="sig-name descname">releasable</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.releasable" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if the data from this component is releasable/public</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Component.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.upper">
+<em class="property">property </em><code class="sig-name descname">upper</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.upper" title="Permalink to this definition">¶</a></dt>
+<dd><p>view the statically derived upper bound on the data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.core.base.Component.value">
+<em class="property">property </em><code class="sig-name descname">value</code><a class="headerlink" href="#opendp.smartnoise.core.base.Component.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the released values from the analysis’ release.
+If this returns None, then this node is not releasable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The value stored in the release corresponding to this node</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.core.base.Dataset">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.core.base.</code><code class="sig-name descname">Dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">skip_row</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">column_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_format</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value_columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">public</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.base.Dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Datasets represent a single tabular resource. Datasets are assumed to be private, and may be loaded from csv files or as literal arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – Path to a csv file on the filesystem. It is assumed that the csv file is well-formed.</p></li>
+<li><p><strong>skip_row</strong> – Set to True if the first row is the csv header. The csv header is always ignored.</p></li>
+<li><p><strong>column_names</strong> – Alternatively, the set of column names in the data resource.</p></li>
+<li><p><strong>value</strong> – Alternatively, a literal value/array to pass via protobuf</p></li>
+<li><p><strong>value_format</strong> – If ambiguous, the data format of the value (either array, indexmap or jagged)</p></li>
+<li><p><strong>public</strong> – Whether to flag the data in the dataset as public. This is of course private by default.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.core.base_pb2">
+<span id="opendp-smartnoise-core-base-pb2-module"></span><h2>opendp.smartnoise.core.base_pb2 module<a class="headerlink" href="#module-opendp.smartnoise.core.base_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.core.components">
+<span id="opendp-smartnoise-core-components-module"></span><h2>opendp.smartnoise.core.components module<a class="headerlink" href="#module-opendp.smartnoise.core.components" title="Permalink to this headline">¶</a></h2>
+<p>Warning, this file is autogenerated by code_generation.py.
+Don’t modify this file manually. (Generated: 2021-01-04 16:18:07.740468)</p>
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.abs">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">abs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.abs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abs Component</p>
+<p>Absolute value of data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic types must be of type float or integer.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.add">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add Component</p>
+<p>Mathematical addition. Value types of arguments must match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Left value to add. Must be of type float or integer.</p></li>
+<li><p><strong>right</strong> – Right value to add. Must be of type float or integer.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.cast">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">atomic_type</span></em>, <em class="sig-param"><span class="n">true_label</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.cast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cast Component</p>
+<p>Cast data to an atomic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data to be cast to another type.</p></li>
+<li><p><strong>true_label</strong> – Positive class (class to be mapped to <cite>true</cite>) for each column. Used only if casting to <cite>bool</cite>.</p></li>
+<li><p><strong>lower</strong> – Minimum allowable imputation value. Used only if casting to <cite>i64</cite>.</p></li>
+<li><p><strong>upper</strong> – Maximum allowable imputation value. Used only if casting to <cite>i64</cite>.</p></li>
+<li><p><strong>atomic_type</strong> – Type to which data should be cast. One of [<cite>string</cite>, <cite>int</cite>, <cite>bool</cite>, <cite>float</cite>]</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.clamp">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">clamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">categories</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">null_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.clamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clamp Component</p>
+<p>Clamps data to the provided bounds.</p>
+<p>If data are numeric, clamping maps elements outside of an interval <cite>[lower, upper]</cite> to the closer endpoint.
+If data are categorical, clamping maps elements outside of the <cite>categories</cite> argument to the associated <cite>null</cite>.
+Using clamp sets the <cite>categories</cite> property for the analysis with value <cite>categories</cite> plus <cite>null_value</cite> in the last position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data to be clamped.</p></li>
+<li><p><strong>lower</strong> – Desired lower bound for each column of the data. Used only if <cite>categories</cite> is <cite>None</cite>.</p></li>
+<li><p><strong>upper</strong> – Desired upper bound for each column of the data. Used only if <cite>categories</cite> is <cite>None</cite>.</p></li>
+<li><p><strong>categories</strong> – The set of categories you want to be represented for each column of the data, or <cite>None</cite>.</p></li>
+<li><p><strong>null_value</strong> – The value to which elements not included in <cite>categories</cite> will be mapped for each column of the data. Used only if <cite>categories</cite> is not <cite>None</cite>.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Clamped data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.column_bind">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">column_bind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arguments</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.column_bind" title="Permalink to this definition">¶</a></dt>
+<dd><p>ColumnBind Component</p>
+<p>Bind arguments as columns of an array to produce a larger array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arguments</strong> – dictionary of arguments to supply to the function</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.count">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">distinct</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count Component</p>
+<p>Returns the number of rows in the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>distinct</strong> – Set to true for the number of unique members in the data.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Row count.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.covariance">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">covariance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">left</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">right</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">finite_sample_correction</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.covariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Covariance Component</p>
+<p>Calculate covariance.</p>
+<p>If <cite>data</cite> argument is provided as a 2D array, calculate covariance matrix. Otherwise, <cite>left</cite> and <cite>right</cite> 1D arrays are used to calculate a cross-covariance matrix between elements of the two arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – 2D data array used to construct covariance matrix.</p></li>
+<li><p><strong>left</strong> – Left data array used to calculate cross-covariance matrix. Used only if <cite>data</cite> not provided.</p></li>
+<li><p><strong>right</strong> – Right data array used to calculate cross-covariance matrix. Used only if <cite>data</cite> not provided.</p></li>
+<li><p><strong>finite_sample_correction</strong> – Whether or not to use the finite sample correction (Bessel’s correction).</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Flattened covariance or cross-covariance matrix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.digitize">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">digitize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">edges</span></em>, <em class="sig-param"><span class="n">null_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">inclusive_left</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.digitize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Digitize Component</p>
+<p>Maps data to bins.</p>
+<p>Bins will be of the form [lower, upper) or (lower, upper]. The null value is the final category.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data to be binned.</p></li>
+<li><p><strong>edges</strong> – Values representing the edges of bins. Edges must be sorted, and may not contain duplicates.</p></li>
+<li><p><strong>null_value</strong> – Value to which to map if there is no valid bin (e.g. if the element falls outside the bin range). The null value is the final category.</p></li>
+<li><p><strong>inclusive_left</strong> – Whether or not the left edge of the bin is inclusive, i.e. the bins are of the form [lower, upper).</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.divide">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">divide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.divide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Divide Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Atomic type must match right</p></li>
+<li><p><strong>right</strong> – Atomic type must match left</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_count">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distinct</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'SimpleGeometric'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPCount Component</p>
+<p>Returns a differentially private row count.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Useful to help bound elapsed time when sampling for the geometric mechanism. Required for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Useful to help bound elapsed time when sampling for the geometric mechanism. Required for the snapping mechanism.</p></li>
+<li><p><strong>distinct</strong> – Set to true for the number of unique members in the data.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. One of [<cite>SimpleGeometric</cite>, <cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>]. Only <cite>SimpleGeometric</cite> is accepted if floating-point protections are enabled.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private row count.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_covariance">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_covariance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">right</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">finite_sample_correction</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_covariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPCovariance Component</p>
+<p>Calculate differentially private covariance.</p>
+<p>If <cite>data</cite> argument is provided as a 2D array, calculate covariance matrix. Otherwise, <cite>left</cite> and <cite>right</cite> 1D arrays are used to calculate a cross-covariance matrix between elements of the two arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Left data array used to calculate cross-covariance matrix. Used only if <cite>data</cite> not provided.</p></li>
+<li><p><strong>right</strong> – Right data array used to calculate cross-covariance matrix. Used only if <cite>data</cite> not provided.</p></li>
+<li><p><strong>data</strong> – 2D data array used to construct covariance matrix.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. One of [<cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>]</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>finite_sample_correction</strong> – Whether or not to use the finite sample correction (Bessel’s correction).</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Flattened covariance or cross-covariance matrix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_gumbel_median">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_gumbel_median</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span></em>, <em class="sig-param"><span class="n">upper</span></em>, <em class="sig-param"><span class="n">enforce_constant_time</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_gumbel_median" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPGumbelMedian Component</p>
+<p>Returns differentially private estimates of the median of each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>lower</strong> – Min candidate</p></li>
+<li><p><strong>upper</strong> – Max candidate</p></li>
+<li><p><strong>enforce_constant_time</strong> – Enforce constant time for median</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private estimates of the median of each column of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_histogram">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_histogram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">edges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">categories</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">null_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">inclusive_left</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'SimpleGeometric'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPHistogram Component</p>
+<p>Returns a differentially private histogram over user-defined categories. The final cell contains the counts for null values (outside the set of categories).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic type must be numeric.</p></li>
+<li><p><strong>edges</strong> – Set of edges to bin continuous-valued data. Used only if data are of <cite>continuous</cite> nature.</p></li>
+<li><p><strong>categories</strong> – Set of categories in data. Used only if data are of <cite>categorical</cite> nature.</p></li>
+<li><p><strong>null_value</strong> – The value to which elements not included in <cite>categories</cite> will be mapped for each column of the data. Used only if <cite>categories</cite> is not <cite>None</cite>. The null value is the final category- counts for the null category are at the end of the vector of counts.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of bin counts. Useful to help bound elapsed time when sampling for the geometric mechanism. Required for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of bin counts. Useful to help bound elapsed time when sampling for the geometric mechanism. Required for the snapping mechanism.</p></li>
+<li><p><strong>inclusive_left</strong> – Whether or not the left edge of the bin is inclusive. If <cite>true</cite> bins are of the form [lower, upper). Otherwise, bins are of the form (lower, upper]. Used only if data are of <cite>continuous</cite> nature.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. One of [<cite>SimpleGeometric</cite>, <cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>]. Only <cite>SimpleGeometric</cite> is accepted if floating-point protections are enabled.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private histogram.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_linear_regression">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_linear_regression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_x</span></em>, <em class="sig-param"><span class="n">data_y</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower_slope</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper_slope</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower_intercept</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper_intercept</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">implementation</span><span class="o">=</span><span class="default_value">'theil-sen-k-match'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_linear_regression" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPLinearRegression Component</p>
+<p>Returns differentially private estimates of the slope and intercept.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_x</strong> – Predictor variable</p></li>
+<li><p><strong>data_y</strong> – Target variable</p></li>
+<li><p><strong>k</strong> – Number of matchings. Memory usage is quadratic in K.</p></li>
+<li><p><strong>lower_slope</strong> – Estimated minimum possible value of the slope.</p></li>
+<li><p><strong>upper_slope</strong> – Estimated maximum possible value of the slope.</p></li>
+<li><p><strong>lower_intercept</strong> – Estimated minimum possible value of the intercept.</p></li>
+<li><p><strong>upper_intercept</strong> – Estimated maximum possible value of the intercept.</p></li>
+<li><p><strong>implementation</strong> – Theil-Sen implementation to use. One of [<cite>theil-sen</cite>, <cite>theil-sen-k-match</cite>]</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private estimate of the slope and intercept of the line fit to the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_maximum">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_maximum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">candidates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPMaximum Component</p>
+<p>Returns differentially private estimates of the maximum elements of each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>candidates</strong> – Set from which the Exponential mechanism will return an element. Type must match with atomic type of data. This value must be column-conformable with data. Only useful for Exponential mechanism.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. Value must be one of [<cite>Automatic</cite>, <cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>]</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private estimates of the maximum elements of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_mean">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">implementation</span><span class="o">=</span><span class="default_value">'resize'</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPMean Component</p>
+<p>Returns differentially private estimates of the means of each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic type must be numeric.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>implementation</strong> – Privatizing algorithm to use. One of [<cite>resize</cite>, <cite>plug-in</cite>]</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. One of [<cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>].</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private estimate of the mean of each column of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_median">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_median</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">candidates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolation</span><span class="o">=</span><span class="default_value">'midpoint'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_median" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPMedian Component</p>
+<p>Returns differentially private estimates of the median of each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic type must be numeric. For Gumbel mechanism, must be limited to a single column of data.</p></li>
+<li><p><strong>candidates</strong> – Set from which the Exponential mechanism will return an element. Type must match with atomic type of data. This value must be column-conformable with data. Only useful for Exponential mechanism.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. Value must be one of [<cite>Exponential</cite>, <cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>, <cite>Gumbel</cite>]. <cite>Automatic</cite> chooses <cite>Exponential</cite> if candidates provided, otherwise chooses <cite>Laplace</cite>.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release.  For Gumbel mechanism, must be limited to a single column of data. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>interpolation</strong> – Interpolation strategy. One of [<cite>lower</cite>, <cite>upper</cite>, <cite>midpoint</cite>, <cite>nearest</cite>, <cite>linear</cite>]</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private estimates of the median of each column of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_minimum">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_minimum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">candidates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPMinimum Component</p>
+<p>Returns differentially private estimates of the minimum elements of each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>candidates</strong> – Set from which the Exponential mechanism will return an element. Type must match with atomic type of data. This value must be column-conformable with data. Only useful for Exponential mechanism.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. Value must be one of [<cite>Automatic</cite>, <cite>Exponential</cite>, <cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>]. <cite>Automatic</cite> chooses <cite>Exponential</cite> if candidates provided.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private estimates of the minimum elements of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_quantile">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_quantile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">candidates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolation</span><span class="o">=</span><span class="default_value">'midpoint'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_quantile" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPQuantile Component</p>
+<p>Returns differentially private estimates of specified quantiles for each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic type must be numeric.</p></li>
+<li><p><strong>candidates</strong> – Set from which the Exponential mechanism will return an element. Type must match with atomic type of data. This value must be column-conformable with data. Only useful for Exponential mechanism.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>alpha</strong> – Desired quantiles, defined on <cite>[0,1]</cite>.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. Value must be one of [<cite>Automatic</cite>, <cite>Exponential</cite>, <cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>]. <cite>Automatic</cite> chooses <cite>Exponential</cite> if candidates provided.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>interpolation</strong> – Interpolation strategy. One of [<cite>lower</cite>, <cite>upper</cite>, <cite>midpoint</cite>, <cite>nearest</cite>, <cite>linear</cite>]</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private estimate of the quantile.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_raw_moment">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_raw_moment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">order</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_raw_moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPRawMoment Component</p>
+<p>Returns differentially private sample estimate of a raw moment for each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data for which you would like the kth raw moments. Atomic data type must be float.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism.</p></li>
+<li><p><strong>order</strong> – Integer statistical moment indicator.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. Value must be one of [<cite>Automatic</cite>, <cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>].</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private sample estimate of kth raw moment for each column of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_sum">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_sum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPSum Component</p>
+<p>Returns differentially private estimates of the sums of each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic, on integral data. Useful to help bound elapsed time when sampling for the geometric mechanism. Useful for the snapping mechanism.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic, on integral data. Useful to help bound elapsed time when sampling for the geometric mechanism. Useful for the snapping mechanism.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. Value must be one of [<cite>Automatic</cite>, <cite>Laplace</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>, <cite>SimpleGeometric</cite>]. <cite>Automatic</cite> chooses based on the input data type.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private sum over elements for each column of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.dp_variance">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">dp_variance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mechanism</span><span class="o">=</span><span class="default_value">'Automatic'</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">finite_sample_correction</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.dp_variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>DPVariance Component</p>
+<p>Returns a differentially private estimate of the variance for each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the statistic. Only useful for the snapping mechanism. Atomic data type must be float.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism. Atomic data type must be float.</p></li>
+<li><p><strong>mechanism</strong> – Privatizing mechanism to use. Value must be one of [<cite>Laplace</cite>, <cite>Snapping</cite>, <cite>Gaussian</cite>, <cite>AnalyticGaussian</cite>].</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Atomic data type value must be float. Example value: {‘epsilon’: 0.5}</p></li>
+<li><p><strong>finite_sample_correction</strong> – Whether or not to use the finite sample correction (Bessel’s correction).</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Differentially private sample variance for each column of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.equal">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">equal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Atomic type must match right</p></li>
+<li><p><strong>right</strong> – Atomic type must match left</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.exponential_mechanism">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">exponential_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">utilities</span></em>, <em class="sig-param"><span class="n">candidates</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.exponential_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>ExponentialMechanism Component</p>
+<p>Returns an element from a finite set with probability relative to its utility.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>utilities</strong> – Respective scores for each candidate. Total number of records must match candidates.</p></li>
+<li><p><strong>candidates</strong> – Set from which the Exponential mechanism will return an element. Total number of records must match utilities.</p></li>
+<li><p><strong>sensitivity</strong> – Override the sensitivity computed by the library. Rejected unless <cite>protect_sensitivity</cite> is disabled.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Length of privacy_usage must be exactly one.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Element from the candidate set selected via the Exponential mechanism.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.filter">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">mask</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter Component</p>
+<p>Filters data down into only the desired rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>mask</strong> – Boolean mask giving whether or not each row should be kept. Example value: data[‘age’] == ‘4’</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data with only the desired rows.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.gaussian_mechanism">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">gaussian_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">analytic</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.gaussian_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>GaussianMechanism Component</p>
+<p>Privatizes a result by returning it perturbed with Gaussian noise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Result to be released privately via the Gaussian mechanism. Atomic type must be numeric.</p></li>
+<li><p><strong>sensitivity</strong> – Override the sensitivity computed by the library. Rejected unless <cite>protect_sensitivity</cite> is disabled.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release.</p></li>
+<li><p><strong>analytic</strong> – Set to enable use of the analytic gaussian mechanism.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Original data perturbed with Gaussian noise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.greater_than">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">greater_than</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.greater_than" title="Permalink to this definition">¶</a></dt>
+<dd><p>GreaterThan Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Atomic values must be numeric and of the same type. Type must match right.</p></li>
+<li><p><strong>right</strong> – Atomic values must be numeric and of the same type. Type must match left.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.histogram">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">histogram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">edges</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">categories</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">null_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">inclusive_left</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Histogram Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>edges</strong> – Set of edges to bin continuous-valued data. Used only if data are of <cite>continuous</cite> nature. Must have a value if categories not specified.</p></li>
+<li><p><strong>categories</strong> – Set of categories in data. Used only if data are of <cite>categorical</cite> nature. Must have a value if edges not specified.</p></li>
+<li><p><strong>null_value</strong> – The value to which elements not included in <cite>categories</cite> will be mapped for each column of the data. Used only if <cite>categories</cite> is not <cite>None</cite>.</p></li>
+<li><p><strong>inclusive_left</strong> – Whether or not the left edge of the bin is inclusive. If <cite>true</cite> bins are of the form [lower, upper). Otherwise, bins are of the form (lower, upper]. Used only if data are of <cite>continuous</cite> nature.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.impute">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">impute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">categories</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">null_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distribution</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shift</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.impute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Impute Component</p>
+<p>Replaces null values with draws from a specified distribution.</p>
+<p>If the <cite>categories</cite> argument is provided, the data are considered to be categorical regardless of atomic type and the elements provided in <cite>null_value</cite> will be replaced with those in <cite>categories</cite> according to <cite>weights</cite>.</p>
+<p>If the <cite>categories</cite> argument is not provided, the data are considered to be numeric and elements that are <cite>f64::NAN</cite> will be replaced according to the specified distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – The data for which null values will be imputed.</p></li>
+<li><p><strong>lower</strong> – A lower bound on data elements for each column. Used only if <cite>categories</cite> is <cite>None</cite>.</p></li>
+<li><p><strong>upper</strong> – An upper bound on data elements for each column. Used only if <cite>categories</cite> is <cite>None</cite>.</p></li>
+<li><p><strong>categories</strong> – The set of categories you want to be represented for each column of the data, if the data is categorical. Atomic type must match atomic type of data.</p></li>
+<li><p><strong>null_values</strong> – The set of values that are considered null for each column of the data, if the data is categorical. Atomic type must match atomic type of data.</p></li>
+<li><p><strong>weights</strong> – Optional. The weight of each category when imputing. Uniform weights are used if not specified.</p></li>
+<li><p><strong>distribution</strong> – The distribution to be used when imputing records. Used only if <cite>categories</cite> is <cite>None</cite>.</p></li>
+<li><p><strong>shift</strong> – The expectation of the Gaussian distribution to be used for imputation. Used only if <cite>distribution</cite> is <cite>Gaussian</cite>.</p></li>
+<li><p><strong>scale</strong> – The standard deviation of the Gaussian distribution to be used for imputation. Used only if <cite>distribution</cite> is <cite>Gaussian</cite>.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data with null values replaced by imputed values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.index">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">indices</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Index Component</p>
+<p>Index into data frames, partitions and arrays to retrieve homogeneously typed contiguous arrays</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>names</strong> – </p></li>
+<li><p><strong>indices</strong> – </p></li>
+<li><p><strong>mask</strong> – </p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.laplace_mechanism">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">laplace_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.laplace_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>LaplaceMechanism Component</p>
+<p>Privatizes a result by returning it perturbed with Laplace noise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – True value to be released privately via the Laplace mechanism.</p></li>
+<li><p><strong>sensitivity</strong> – Override the sensitivity computed by the library. Rejected unless <cite>protect_sensitivity</cite> is disabled.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Original data perturbed with Laplace noise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.less_than">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">less_than</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.less_than" title="Permalink to this definition">¶</a></dt>
+<dd><p>LessThan Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Atomic type must be numeric, and match with atomic type of right.</p></li>
+<li><p><strong>right</strong> – Atomic type must be numeric, and match with atomic type of left.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.literal">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">literal</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.literal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Literal Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.log">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">base</span><span class="o">=</span><span class="default_value">2.71828</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic type must be float.</p></li>
+<li><p><strong>base</strong> – </p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.logical_and">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">logical_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.logical_and" title="Permalink to this definition">¶</a></dt>
+<dd><p>And Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Left argument for the logical AND.</p></li>
+<li><p><strong>right</strong> – Right argument for the logical AND.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Logical AND of left and right.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.logical_or">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">logical_or</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.logical_or" title="Permalink to this definition">¶</a></dt>
+<dd><p>Or Component</p>
+<p>left and right arguments must share the same data types</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – </p></li>
+<li><p><strong>right</strong> – </p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.map">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arguments</span></em>, <em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map Component</p>
+<p>Apply Component to each data partition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arguments</strong> – dictionary of arguments to supply to the function</p></li>
+<li><p><strong>component</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.materialize">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">materialize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_names</span></em>, <em class="sig-param"><span class="n">file_path</span></em>, <em class="sig-param"><span class="n">public</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">skip_row</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.materialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Materialize Component</p>
+<p>Load a tabular frame from a data source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_names</strong> – </p></li>
+<li><p><strong>public</strong> – </p></li>
+<li><p><strong>skip_row</strong> – when set, skip the first line (header) in a csv</p></li>
+<li><p><strong>file_path</strong> – Path to the file on the system. File format must be CSV.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.maximum">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">maximum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">candidates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum Component</p>
+<p>Find the maximum value of each column in the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data for which you want the maximum value in each column.</p></li>
+<li><p><strong>candidates</strong> – Set from which the Exponential mechanism will return an element.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Maximum of each column in the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.mean">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean Component</p>
+<p>Calculates the arithmetic mean of each column in the provided data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Arithmetic mean for each column of the data in question.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.median">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">median</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">candidates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.median" title="Permalink to this definition">¶</a></dt>
+<dd><p>Median Component</p>
+<p>Find the median value of each column in the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data for which you want the median value in each column.</p></li>
+<li><p><strong>candidates</strong> – Set from which to compute scores for the Exponential mechanism.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Median of each column in the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.minimum">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">minimum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">candidates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum Component</p>
+<p>Find the minimum value of each column in the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data for which you want the maximum value in each column.</p></li>
+<li><p><strong>candidates</strong> – Set from which the Exponential mechanism will return an element.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Maximum of each column in the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.modulo">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">modulo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.modulo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modulo Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Atomic type must be numeric. Atomic type must match right.</p></li>
+<li><p><strong>right</strong> – Atomic type must be numeric. Atomic type must match left.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.multiply">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">multiply</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.multiply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiply Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Atomic type must be numeric. Atomic type must match right.</p></li>
+<li><p><strong>right</strong> – Atomic type must be numeric. Atomic type must match left.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.negate">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">negate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.negate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negate Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic type must be boolean.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.negative">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">negative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.negative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic type must be numeric.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.partition">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">partition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">num_partitions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">by</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.partition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partition Component</p>
+<p>Split the rows of data into either k equally sized partitions, or by the categories of a vector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Must be a dataframe or an array</p></li>
+<li><p><strong>num_partitions</strong> – </p></li>
+<li><p><strong>by</strong> – </p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.power">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">power</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">radical</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.power" title="Permalink to this definition">¶</a></dt>
+<dd><p>Power Component</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic types must be numeric and homogenous.</p></li>
+<li><p><strong>radical</strong> – Atomic values may not be negative.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.quantile">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">quantile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">candidates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interpolation</span><span class="o">=</span><span class="default_value">'midpoint'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.quantile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quantile Component</p>
+<p>Get values corresponding to specified quantiles for each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Atomic type must be numeric.</p></li>
+<li><p><strong>candidates</strong> – Set from which the Exponential mechanism will return an element. Type must match with atomic type of data. This value must be column-conformable with data.</p></li>
+<li><p><strong>alpha</strong> – Desired quantiles, defined on <cite>[0,1]</cite>. Examples: 0: min, 0.5: median, 1: max</p></li>
+<li><p><strong>interpolation</strong> – Interpolation strategy. One of [<cite>lower</cite>, <cite>upper</cite>, <cite>midpoint</cite>, <cite>nearest</cite>, <cite>linear</cite>]</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Quantile values for each column.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.raw_moment">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">raw_moment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">order</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.raw_moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>RawMoment Component</p>
+<p>Returns sample estimate of kth raw moment for each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data for which you would like the kth raw moments. Atomic data type must be float.</p></li>
+<li><p><strong>order</strong> – Indicate the kth integer statistical moment.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>kth raw sample moment for each column.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.reshape">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">reshape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">shape</span></em>, <em class="sig-param"><span class="n">symmetric</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">layout</span><span class="o">=</span><span class="default_value">'row'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.reshape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reshape Component</p>
+<p>Reshapes a row vector into a matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Vector of data to stack into a matrix. A Indexmap of matrices will be emitted if multiple rows are provided.</p></li>
+<li><p><strong>symmetric</strong> – Set if data are elements from the upper triangle of a symmetric matrix.</p></li>
+<li><p><strong>layout</strong> – Consecutive elements of either the <cite>row</cite> or <cite>column</cite> reside next to each other. Note that multi-row inputs are reshaped to partitional outputs, having one matrix per partition.</p></li>
+<li><p><strong>shape</strong> – The shape of the output matrix. Dimensionality may not be greater than 2.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Reshape of data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.resize">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">resize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">number_rows</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">number_columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">categories</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distribution</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shift</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_proportion</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minimum_rows</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resize Component</p>
+<p>Resizes the data in question to be consistent with a provided sample size, <cite>n</cite>.</p>
+<p>The library does not, in general, assume that the sample size of the data being analyzed is known. This introduces a number of problems around how to calculate statistics that are a function of the sample size.</p>
+<p>To address this problem, the library asks the user to provide <cite>n</cite>, an estimate of the true sample size based on their own beliefs about the data or a previous differentially private count of the number of rows in the data. This component then either subsamples or appends to the data in order to make it consistent with the provided <cite>n</cite>.</p>
+<p>Note that lower/upper/categorical arguments must be provided, or lower/upper/categorical properties must be known on data.</p>
+<p>Note that if using categories constraint, data are treated as categorical regardless of atomic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – The data to be resized. Atomic type of data must match atomic type of categories. If categories not populated, data are treated as numeric and any necessary imputation is done according to a continuous distribution.</p></li>
+<li><p><strong>number_rows</strong> – An estimate of the number of rows in the data. This could be the guess of the user, or the result of a DP release. Cannot be set with minimum_rows.</p></li>
+<li><p><strong>number_columns</strong> – An estimate of the number of columns in the data. This must be the guess of the user, if not previously known (optional). A non-empty value must be positive. A non-empty value is incompatiable with an attempt to resize number of columns and results in an error.</p></li>
+<li><p><strong>lower</strong> – A lower bound on data elements for each column. This value must be less than upper.</p></li>
+<li><p><strong>upper</strong> – An upper bound on data elements for each column. This value must be greater than lower.</p></li>
+<li><p><strong>categories</strong> – The set of categories you want to be represented for each column of the data, if the data is categorical. Atomic type of data must match atomic type of categories.</p></li>
+<li><p><strong>weights</strong> – Optional. The weight of each category when imputing. Uniform weights are used if not specified.</p></li>
+<li><p><strong>distribution</strong> – The distribution to be used when imputing records.</p></li>
+<li><p><strong>shift</strong> – The expectation of the Gaussian distribution used for imputation (used only if <cite>distribution = Gaussian</cite>).</p></li>
+<li><p><strong>scale</strong> – The standard deviation of the Gaussian distribution used for imputation (used only if <cite>distribution = Gaussian</cite>).</p></li>
+<li><p><strong>sample_proportion</strong> – The proportion of underlying data that may be used to construct the new data. May be &gt; 1.</p></li>
+<li><p><strong>minimum_rows</strong> – Only add synthetic data if the actual row count is less than this number. No sampling is performed. Cannot be set with <cite>number_rows</cite></p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A resized version of data consistent with the provided <cite>n</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.row_max">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">row_max</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.row_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>RowMax Component</p>
+<p>Returns the maximum of the left and right arguments, per row. Note that left and right arguments must share the same data types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Member data type must match that of right.</p></li>
+<li><p><strong>right</strong> – Member data type must match that of left.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.row_min">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">row_min</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.row_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>RowMin Component</p>
+<p>Returns the minimum of the left and right arguments, per row. Note that left and right arguments must share the same data types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Member data type must match that of right.</p></li>
+<li><p><strong>right</strong> – Member data type must match that of left.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.simple_geometric_mechanism">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">simple_geometric_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.simple_geometric_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>SimpleGeometricMechanism Component</p>
+<p>Privatizes a result by returning it perturbed with Geometric noise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Result to be released privately via the Geometric mechanism. Member data type must be integer.</p></li>
+<li><p><strong>lower</strong> – Lower bound of the statistic to be privatized. Member data type must be integer.</p></li>
+<li><p><strong>upper</strong> – Upper bound of the statistic to be privatized. Member data type must be integer.</p></li>
+<li><p><strong>sensitivity</strong> – Override the sensitivity computed by the library. Rejected unless <cite>protect_sensitivity</cite> is disabled.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release. Values of zero or less, and values of greater than one, will result in warnings.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Original data perturbed with Geometric noise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.snapping_mechanism">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">snapping_mechanism</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upper</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">binding_probability</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sensitivity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">privacy_usage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.snapping_mechanism" title="Permalink to this definition">¶</a></dt>
+<dd><p>SnappingMechanism Component</p>
+<p>Privatizes a result by returning it perturbed via the Snapping mechanism. This mechanism is generally intended for non-integer numerical data. Note that snapping may not operate on integers when floating-point protections are enabled. For this situation, use the geometric mechanism instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Result to be released privately via the Snapping mechanism. Array members must be of type float or of type integer.</p></li>
+<li><p><strong>lower</strong> – Estimated minimum possible value of the data. Only useful for the snapping mechanism. This argument is required.</p></li>
+<li><p><strong>upper</strong> – Estimated maximum possible value of the statistic. Only useful for the snapping mechanism. This argument is required.</p></li>
+<li><p><strong>binding_probability</strong> – Upper bound on probability that final clamp binds. Must be within [0, 1).</p></li>
+<li><p><strong>sensitivity</strong> – Override the sensitivity computed by the library. Rejected unless <cite>protect_sensitivity</cite> is disabled.</p></li>
+<li><p><strong>privacy_usage</strong> – Object describing the type and amount of privacy to be used for the mechanism release.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Original data perturbed via the Snapping mechanism.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.subtract">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">subtract</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.subtract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subtract Component</p>
+<p>Mathematical subtraction. Value types of arguments must match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – Value from which to subtract. Must be of type float or integer.</p></li>
+<li><p><strong>right</strong> – Value which to subtract. Must be of type float or integer.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.sum">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">sum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum Component</p>
+<p>Calculates the sum of each column of the data. Data must be of type float or integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data for which you want the sum of each column.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Sum of each column of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.theil_sen">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">theil_sen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_x</span></em>, <em class="sig-param"><span class="n">data_y</span></em>, <em class="sig-param"><span class="n">implementation</span><span class="o">=</span><span class="default_value">'theil-sen-k-match'</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.theil_sen" title="Permalink to this definition">¶</a></dt>
+<dd><p>TheilSen Component</p>
+<p>Returns slope and intercept estimates for point pairs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_x</strong> – value(s) from the first coordinate axis</p></li>
+<li><p><strong>data_y</strong> – value(s) from the second coordinate axis</p></li>
+<li><p><strong>implementation</strong> – Theil-Sen implementation to use. One of [<cite>theil-sen</cite>, <cite>theil-sen-k-match</cite>]</p></li>
+<li><p><strong>k</strong> – Number of trials to run for Theil-Sen K Match.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>All slope and intercept estimates for point pairs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.to_bool">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">to_bool</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">true_label</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.to_bool" title="Permalink to this definition">¶</a></dt>
+<dd><p>ToBool Component</p>
+<p>Cast data to a bool atomic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data to be cast to Boolean type.</p></li>
+<li><p><strong>true_label</strong> – Positive class (class to be mapped to <cite>true</cite>) for each column.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.to_dataframe">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">to_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">names</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.to_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>ToDataframe Component</p>
+<p>Name columns of an array to produce a Dataframe with the specified names. Typically used when partitioning a dataframe with preprocessed columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – ndarray (structured or homogeneous), Iterable, dict, or DataFrame</p></li>
+<li><p><strong>names</strong> – Column labels to use for resulting frame. Will default to RangeIndex (0, 1, 2, …, n) if no column labels are provided.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dataframe in target language, for example &lt;a href=”<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html</a>”&gt;pandas.DataFrame&lt;/a&gt;.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.to_float">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">to_float</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.to_float" title="Permalink to this definition">¶</a></dt>
+<dd><p>ToFloat Component</p>
+<p>Cast data to a float atomic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data to be cast to float.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array containing the converted float value(s).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.to_int">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">to_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">lower</span></em>, <em class="sig-param"><span class="n">upper</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.to_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>ToInt Component</p>
+<p>Cast data to a int atomic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data to be cast to integer type.</p></li>
+<li><p><strong>lower</strong> – Minimum allowable imputation value. Integers cannot represent null, so values that cannot be parsed are imputed.</p></li>
+<li><p><strong>upper</strong> – Maximum allowable imputation value.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array containing the converted integer value(s).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.to_string">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">to_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>ToString Component</p>
+<p>Cast data to a string atomic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Data to be cast to string type.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The return is the result of the to_string on the arguments.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.union">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arguments</span></em>, <em class="sig-param"><span class="n">flatten</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Union Component</p>
+<p>Union the arrays in the arguments into one array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arguments</strong> – dictionary of arguments to supply to the function</p></li>
+<li><p><strong>flatten</strong> – When set, the output is an array. When unset, the output is an indexmap of arrays.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array (or indexmap of arrays) containing item(s) representing the concatenation of all partitions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.components.variance">
+<code class="sig-prename descclassname">opendp.smartnoise.core.components.</code><code class="sig-name descname">variance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">finite_sample_correction</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.components.variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variance Component</p>
+<p>Calculates the sample variance for each column of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>finite_sample_correction</strong> – Whether or not to use the finite sample correction (Bessel’s correction) to correct the bias in the estimation of the population variance.</p></li>
+<li><p><strong>kwargs</strong> – data bounds of the form [argument]_[bound]=[lower | upper | categories | …]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Sample variance for each column of the data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.core.components_pb2">
+<span id="opendp-smartnoise-core-components-pb2-module"></span><h2>opendp.smartnoise.core.components_pb2 module<a class="headerlink" href="#module-opendp.smartnoise.core.components_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.core.value">
+<span id="opendp-smartnoise-core-value-module"></span><h2>opendp.smartnoise.core.value module<a class="headerlink" href="#module-opendp.smartnoise.core.value" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.detect_atomic_type">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">detect_atomic_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.detect_atomic_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_array">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_array1d">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_array1d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_array1d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_array1d_null">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_array1d_null</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_array1d_null" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_dataframe">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_index_key">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_index_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_index_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_jagged">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_jagged</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_jagged" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_partitions">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_partitions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_partitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_privacy_usage">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_privacy_usage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">usage</span><span class="p">:</span> <span class="n">value_pb2.PrivacyUsage</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_privacy_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a json object representing privacy usage from a proto object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>usage</strong> – protobuf message</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>json privacy usage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_release">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">release</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_release" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.parse_value">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">parse_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.parse_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_analysis">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_analysis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_argument_properties">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_argument_properties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_argument_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_array1d">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_array1d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_array1d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_component">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_component</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">component</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_component" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_dataframe">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_filter_level">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_filter_level</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter_level</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_filter_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_index_key">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_index_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_index_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_indexmap_release_node">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_indexmap_release_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">release_values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_indexmap_release_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_partitions">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_partitions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_partitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_privacy_definition">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_privacy_definition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">analysis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_privacy_definition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_privacy_usage">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_privacy_usage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">usage</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_privacy_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a protobuf object representing privacy usage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>usage</strong> – either a dict {‘epsilon’: float, ‘delta’: float} or PrivacyUsage. May also be contained in a list.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List[PrivacyUsage]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_release">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_release</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">release_values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_release" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_release_node">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_release_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">release_node</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_release_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="opendp.smartnoise.core.value.serialize_value">
+<code class="sig-prename descclassname">opendp.smartnoise.core.value.</code><code class="sig-name descname">serialize_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">value_format</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.core.value.serialize_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.core.value_pb2">
+<span id="opendp-smartnoise-core-value-pb2-module"></span><h2>opendp.smartnoise.core.value_pb2 module<a class="headerlink" href="#module-opendp.smartnoise.core.value_pb2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.core.variant_message_map">
+<span id="opendp-smartnoise-core-variant-message-map-module"></span><h2>opendp.smartnoise.core.variant_message_map module<a class="headerlink" href="#module-opendp.smartnoise.core.variant_message_map" title="Permalink to this headline">¶</a></h2>
+<p>Warning, this file is autogenerated by code_generation.py.
+Don’t modify this file manually. (Generated: 2021-01-04 16:18:07.740468)</p>
+</div>
+<div class="section" id="module-opendp.smartnoise.core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opendp.smartnoise.core" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">OpenDP</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joshua Allen, Ethan Cowan, Christian Covington, Eduardo de Leon, Ira Globus-Harris, James Honaker, Jason Huang, Ellen Kraffmiller, Saniya Movahed, Michael Phelan, Raman Prasad, Michael Shoemate, Robert Treacy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/opendp.smartnoise.core.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

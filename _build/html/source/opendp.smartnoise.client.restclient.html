@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opendp.smartnoise.client.restclient package &#8212; OpenDP 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="opendp-smartnoise-client-restclient-package">
+<h1>opendp.smartnoise.client.restclient package<a class="headerlink" href="#opendp-smartnoise-client-restclient-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html">opendp.smartnoise.client.restclient.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.dataset_document">opendp.smartnoise.client.restclient.models.dataset_document module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.dataset_read_release_request">opendp.smartnoise.client.restclient.models.dataset_read_release_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.dataset_read_request">opendp.smartnoise.client.restclient.models.dataset_read_request module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.dataverse_details">opendp.smartnoise.client.restclient.models.dataverse_details module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.executerun_ok_response">opendp.smartnoise.client.restclient.models.executerun_ok_response module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.local_csv_details">opendp.smartnoise.client.restclient.models.local_csv_details module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.project_run_details">opendp.smartnoise.client.restclient.models.project_run_details module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.register_ok_response">opendp.smartnoise.client.restclient.models.register_ok_response module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.release_dataset_document">opendp.smartnoise.client.restclient.models.release_dataset_document module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.secret">opendp.smartnoise.client.restclient.models.secret module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models.secret_put_success">opendp.smartnoise.client.restclient.models.secret_put_success module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#module-opendp.smartnoise.client.restclient.models">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.rest_client">
+<span id="opendp-smartnoise-client-restclient-rest-client-module"></span><h2>opendp.smartnoise.client.restclient.rest_client module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.rest_client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.rest_client.RestClient">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.rest_client.</code><code class="sig-name descname">RestClient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">credentials</span></em>, <em class="sig-param"><span class="n">base_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.rest_client.RestClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is the Open API specification of the Burdock execution service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.rest_client.RestClientConfiguration" title="opendp.smartnoise.client.restclient.rest_client.RestClientConfiguration"><em>RestClientConfiguration</em></a>) – Configuration for client.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>credentials</strong> (<em>None</em>) – Subscription credentials which uniquely identify
+client subscription.</p></li>
+<li><p><strong>base_url</strong> (<em>str</em>) – Service URL</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.rest_client.RestClient.datasetread">
+<code class="sig-name descname">datasetread</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_request</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.rest_client.RestClient.datasetread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the details for reading the dataset.</p>
+<p>Return the details of the requested dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_request</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetReadRequest" title="opendp.smartnoise.client.restclient.models.DatasetReadRequest"><em>DatasetReadRequest</em></a>) – Get the dataset read request</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DatasetDocument or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetDocument" title="opendp.smartnoise.client.restclient.models.DatasetDocument">DatasetDocument</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.rest_client.RestClient.datasetreadreleased">
+<code class="sig-name descname">datasetreadreleased</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_request</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.rest_client.RestClient.datasetreadreleased" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a released dataset.</p>
+<p>Return the details of the requested dataset, decrement the budget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_request</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetReadReleaseRequest" title="opendp.smartnoise.client.restclient.models.DatasetReadReleaseRequest"><em>DatasetReadReleaseRequest</em></a>) – Get the dataset read request</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReleaseDatasetDocument or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument" title="opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument">ReleaseDatasetDocument</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.rest_client.RestClient.datasetregister">
+<code class="sig-name descname">datasetregister</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.rest_client.RestClient.datasetregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a new dataset with budget.</p>
+<p>Posts dataset info, creates new entry in remote dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetDocument" title="opendp.smartnoise.client.restclient.models.DatasetDocument"><em>DatasetDocument</em></a>) – Well formed dataset for adding to dict</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RegisterOKResponse or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.RegisterOKResponse" title="opendp.smartnoise.client.restclient.models.RegisterOKResponse">RegisterOKResponse</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.rest_client.RestClient.datasetrelease">
+<code class="sig-name descname">datasetrelease</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">release_request</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.rest_client.RestClient.datasetrelease" title="Permalink to this definition">¶</a></dt>
+<dd><p>Release a differentially private dataset.</p>
+<p>Return the details of the released dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>release_request</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetDocument" title="opendp.smartnoise.client.restclient.models.DatasetDocument"><em>DatasetDocument</em></a>) – Request to make a dataset release</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReleaseDatasetDocument or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument" title="opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument">ReleaseDatasetDocument</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.rest_client.RestClient.executerun">
+<code class="sig-name descname">executerun</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">details</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.rest_client.RestClient.executerun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a differentially private module.</p>
+<p>Create a run of the specified module and return the results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>details</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.ProjectRunDetails" title="opendp.smartnoise.client.restclient.models.ProjectRunDetails"><em>ProjectRunDetails</em></a>) – Configuration for the module run.</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ExecuterunOKResponse or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.ExecuterunOKResponse" title="opendp.smartnoise.client.restclient.models.ExecuterunOKResponse">ExecuterunOKResponse</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.rest_client.RestClient.secretsput">
+<code class="sig-name descname">secretsput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">secret</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.rest_client.RestClient.secretsput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a secret to the secret store.</p>
+<p>Add the secret to the secret store.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>secret</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.Secret" title="opendp.smartnoise.client.restclient.models.Secret"><em>Secret</em></a>) – Add a secret</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SecretPutSuccess or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.SecretPutSuccess" title="opendp.smartnoise.client.restclient.models.SecretPutSuccess">SecretPutSuccess</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.rest_client.RestClientConfiguration">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.rest_client.</code><code class="sig-name descname">RestClientConfiguration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">credentials</span></em>, <em class="sig-param"><span class="n">base_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.rest_client.RestClientConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.configuration.Configuration</span></code></p>
+<p>Configuration for RestClient
+Note that all parameters used to create this instance are saved as instance
+attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>credentials</strong> (<em>None</em>) – Subscription credentials which uniquely identify
+client subscription.</p></li>
+<li><p><strong>base_url</strong> (<em>str</em>) – Service URL</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.version">
+<span id="opendp-smartnoise-client-restclient-version-module"></span><h2>opendp.smartnoise.client.restclient.version module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.version" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opendp.smartnoise.client.restclient" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.RestClient">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.</code><code class="sig-name descname">RestClient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">credentials</span></em>, <em class="sig-param"><span class="n">base_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.RestClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is the Open API specification of the Burdock execution service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.rest_client.RestClientConfiguration" title="opendp.smartnoise.client.restclient.rest_client.RestClientConfiguration"><em>RestClientConfiguration</em></a>) – Configuration for client.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>credentials</strong> (<em>None</em>) – Subscription credentials which uniquely identify
+client subscription.</p></li>
+<li><p><strong>base_url</strong> (<em>str</em>) – Service URL</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.RestClient.datasetread">
+<code class="sig-name descname">datasetread</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_request</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.RestClient.datasetread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the details for reading the dataset.</p>
+<p>Return the details of the requested dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_request</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetReadRequest" title="opendp.smartnoise.client.restclient.models.DatasetReadRequest"><em>DatasetReadRequest</em></a>) – Get the dataset read request</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DatasetDocument or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetDocument" title="opendp.smartnoise.client.restclient.models.DatasetDocument">DatasetDocument</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.RestClient.datasetreadreleased">
+<code class="sig-name descname">datasetreadreleased</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_request</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.RestClient.datasetreadreleased" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a released dataset.</p>
+<p>Return the details of the requested dataset, decrement the budget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_request</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetReadReleaseRequest" title="opendp.smartnoise.client.restclient.models.DatasetReadReleaseRequest"><em>DatasetReadReleaseRequest</em></a>) – Get the dataset read request</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReleaseDatasetDocument or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument" title="opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument">ReleaseDatasetDocument</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.RestClient.datasetregister">
+<code class="sig-name descname">datasetregister</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.RestClient.datasetregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a new dataset with budget.</p>
+<p>Posts dataset info, creates new entry in remote dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetDocument" title="opendp.smartnoise.client.restclient.models.DatasetDocument"><em>DatasetDocument</em></a>) – Well formed dataset for adding to dict</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RegisterOKResponse or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.RegisterOKResponse" title="opendp.smartnoise.client.restclient.models.RegisterOKResponse">RegisterOKResponse</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.RestClient.datasetrelease">
+<code class="sig-name descname">datasetrelease</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">release_request</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.RestClient.datasetrelease" title="Permalink to this definition">¶</a></dt>
+<dd><p>Release a differentially private dataset.</p>
+<p>Return the details of the released dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>release_request</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.DatasetDocument" title="opendp.smartnoise.client.restclient.models.DatasetDocument"><em>DatasetDocument</em></a>) – Request to make a dataset release</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ReleaseDatasetDocument or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument" title="opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument">ReleaseDatasetDocument</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.RestClient.executerun">
+<code class="sig-name descname">executerun</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">details</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.RestClient.executerun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a differentially private module.</p>
+<p>Create a run of the specified module and return the results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>details</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.ProjectRunDetails" title="opendp.smartnoise.client.restclient.models.ProjectRunDetails"><em>ProjectRunDetails</em></a>) – Configuration for the module run.</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ExecuterunOKResponse or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.ExecuterunOKResponse" title="opendp.smartnoise.client.restclient.models.ExecuterunOKResponse">ExecuterunOKResponse</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="opendp.smartnoise.client.restclient.RestClient.secretsput">
+<code class="sig-name descname">secretsput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">secret</span></em>, <em class="sig-param"><span class="n">custom_headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">operation_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.RestClient.secretsput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a secret to the secret store.</p>
+<p>Add the secret to the secret store.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>secret</strong> (<a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.Secret" title="opendp.smartnoise.client.restclient.models.Secret"><em>Secret</em></a>) – Add a secret</p></li>
+<li><p><strong>custom_headers</strong> (<em>dict</em>) – headers that will be added to the request</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – returns the direct response alongside the
+deserialized response</p></li>
+<li><p><strong>operation_config</strong> – <span class="xref std std-ref">Operation configuration
+overrides</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SecretPutSuccess or ClientRawResponse if raw=true</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="opendp.smartnoise.client.restclient.models.html#opendp.smartnoise.client.restclient.models.SecretPutSuccess" title="opendp.smartnoise.client.restclient.models.SecretPutSuccess">SecretPutSuccess</a> or
+ClientRawResponse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpOperationError</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">OpenDP</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joshua Allen, Ethan Cowan, Christian Covington, Eduardo de Leon, Ira Globus-Harris, James Honaker, Jason Huang, Ellen Kraffmiller, Saniya Movahed, Michael Phelan, Raman Prasad, Michael Shoemate, Robert Treacy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/opendp.smartnoise.client.restclient.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

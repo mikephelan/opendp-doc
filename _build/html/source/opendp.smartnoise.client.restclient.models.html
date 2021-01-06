@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opendp.smartnoise.client.restclient.models package &#8212; OpenDP 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="opendp-smartnoise-client-restclient-models-package">
+<h1>opendp.smartnoise.client.restclient.models package<a class="headerlink" href="#opendp-smartnoise-client-restclient-models-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.dataset_document">
+<span id="opendp-smartnoise-client-restclient-models-dataset-document-module"></span><h2>opendp.smartnoise.client.restclient.models.dataset_document module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.dataset_document" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.dataset_document.DatasetDocument">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.dataset_document.</code><code class="sig-name descname">DatasetDocument</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataset_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">budget</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">release_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">authorized_users</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">csv_details</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataverse_details</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.dataset_document.DatasetDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>DatasetDocument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_name</strong> (<em>str</em>) – The name for the dataset</p></li>
+<li><p><strong>dataset_type</strong> (<em>str</em>) – The type of the dataset</p></li>
+<li><p><strong>budget</strong> (<em>float</em>) – Available budget for the dataset registered</p></li>
+<li><p><strong>release_cost</strong> (<em>float</em>) – Cost of creating a release</p></li>
+<li><p><strong>authorized_users</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>csv_details</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.models.LocalCSVDetails" title="opendp.smartnoise.client.restclient.models.LocalCSVDetails"><em>LocalCSVDetails</em></a>) – </p></li>
+<li><p><strong>dataverse_details</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.models.DataverseDetails" title="opendp.smartnoise.client.restclient.models.DataverseDetails"><em>DataverseDetails</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.dataset_read_release_request">
+<span id="opendp-smartnoise-client-restclient-models-dataset-read-release-request-module"></span><h2>opendp.smartnoise.client.restclient.models.dataset_read_release_request module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.dataset_read_release_request" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.dataset_read_release_request.DatasetReadReleaseRequest">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.dataset_read_release_request.</code><code class="sig-name descname">DatasetReadReleaseRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.dataset_read_release_request.DatasetReadReleaseRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>DatasetReadReleaseRequest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset_name</strong> (<em>str</em>) – The name for the dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.dataset_read_request">
+<span id="opendp-smartnoise-client-restclient-models-dataset-read-request-module"></span><h2>opendp.smartnoise.client.restclient.models.dataset_read_request module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.dataset_read_request" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.dataset_read_request.DatasetReadRequest">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.dataset_read_request.</code><code class="sig-name descname">DatasetReadRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">budget</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.dataset_read_request.DatasetReadRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>DatasetReadRequest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_name</strong> (<em>str</em>) – The name for the dataset</p></li>
+<li><p><strong>budget</strong> (<em>float</em>) – Budget used by this read request</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.dataverse_details">
+<span id="opendp-smartnoise-client-restclient-models-dataverse-details-module"></span><h2>opendp.smartnoise.client.restclient.models.dataverse_details module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.dataverse_details" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.dataverse_details.DataverseDetails">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.dataverse_details.</code><code class="sig-name descname">DataverseDetails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">local_metadata_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">token</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">schema</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.dataverse_details.DataverseDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>DataverseDetails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>local_metadata_path</strong> (<em>str</em>) – </p></li>
+<li><p><strong>host</strong> (<em>str</em>) – Host of dataset, if dataverse</p></li>
+<li><p><strong>token</strong> (<em>str</em>) – The token for the dataverse</p></li>
+<li><p><strong>schema</strong> (<em>str</em>) – Schema of dataset, well formed json</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.executerun_ok_response">
+<span id="opendp-smartnoise-client-restclient-models-executerun-ok-response-module"></span><h2>opendp.smartnoise.client.restclient.models.executerun_ok_response module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.executerun_ok_response" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.executerun_ok_response.ExecuterunOKResponse">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.executerun_ok_response.</code><code class="sig-name descname">ExecuterunOKResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.executerun_ok_response.ExecuterunOKResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>ExecuterunOKResponse.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>result</strong> (<em>str</em>) – Json string result,  TODO release document</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.local_csv_details">
+<span id="opendp-smartnoise-client-restclient-models-local-csv-details-module"></span><h2>opendp.smartnoise.client.restclient.models.local_csv_details module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.local_csv_details" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.local_csv_details.LocalCSVDetails">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.local_csv_details.</code><code class="sig-name descname">LocalCSVDetails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">local_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.local_csv_details.LocalCSVDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>LocalCSVDetails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>local_path</strong> (<em>str</em>) – Path to the csv on disk</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.project_run_details">
+<span id="opendp-smartnoise-client-restclient-models-project-run-details-module"></span><h2>opendp.smartnoise.client.restclient.models.project_run_details module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.project_run_details" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.project_run_details.ProjectRunDetails">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.project_run_details.</code><code class="sig-name descname">ProjectRunDetails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project_uri</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.project_run_details.ProjectRunDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>ProjectRunDetails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project_uri</strong> (<em>str</em>) – Git url of the project</p></li>
+<li><p><strong>params</strong> (<em>str</em>) – Input parameters of the project</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.register_ok_response">
+<span id="opendp-smartnoise-client-restclient-models-register-ok-response-module"></span><h2>opendp.smartnoise.client.restclient.models.register_ok_response module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.register_ok_response" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.register_ok_response.RegisterOKResponse">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.register_ok_response.</code><code class="sig-name descname">RegisterOKResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.register_ok_response.RegisterOKResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>RegisterOKResponse.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>result</strong> (<em>str</em>) – DatasetName</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.release_dataset_document">
+<span id="opendp-smartnoise-client-restclient-models-release-dataset-document-module"></span><h2>opendp.smartnoise.client.restclient.models.release_dataset_document module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.release_dataset_document" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.release_dataset_document.ReleaseDatasetDocument">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.release_dataset_document.</code><code class="sig-name descname">ReleaseDatasetDocument</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataset_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">budget</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">release_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">authorized_users</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">csv_details</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataverse_details</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.release_dataset_document.ReleaseDatasetDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>ReleaseDatasetDocument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_name</strong> (<em>str</em>) – The name for the dataset</p></li>
+<li><p><strong>dataset_type</strong> (<em>str</em>) – The type of the dataset</p></li>
+<li><p><strong>budget</strong> (<em>float</em>) – Available budget for the dataset registered</p></li>
+<li><p><strong>release_cost</strong> (<em>float</em>) – Cost of creating a release</p></li>
+<li><p><strong>authorized_users</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>csv_details</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.models.LocalCSVDetails" title="opendp.smartnoise.client.restclient.models.LocalCSVDetails"><em>LocalCSVDetails</em></a>) – </p></li>
+<li><p><strong>dataverse_details</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.models.DataverseDetails" title="opendp.smartnoise.client.restclient.models.DataverseDetails"><em>DataverseDetails</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.secret">
+<span id="opendp-smartnoise-client-restclient-models-secret-module"></span><h2>opendp.smartnoise.client.restclient.models.secret module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.secret" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.secret.Secret">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.secret.</code><code class="sig-name descname">Secret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.secret.Secret" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>Secret.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the secret</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The secret</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models.secret_put_success">
+<span id="opendp-smartnoise-client-restclient-models-secret-put-success-module"></span><h2>opendp.smartnoise.client.restclient.models.secret_put_success module<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models.secret_put_success" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.secret_put_success.SecretPutSuccess">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.secret_put_success.</code><code class="sig-name descname">SecretPutSuccess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.secret_put_success.SecretPutSuccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>SecretPutSuccess.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of the secret</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-opendp.smartnoise.client.restclient.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opendp.smartnoise.client.restclient.models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.DatasetDocument">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">DatasetDocument</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataset_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">budget</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">release_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">authorized_users</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">csv_details</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataverse_details</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.DatasetDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>DatasetDocument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_name</strong> (<em>str</em>) – The name for the dataset</p></li>
+<li><p><strong>dataset_type</strong> (<em>str</em>) – The type of the dataset</p></li>
+<li><p><strong>budget</strong> (<em>float</em>) – Available budget for the dataset registered</p></li>
+<li><p><strong>release_cost</strong> (<em>float</em>) – Cost of creating a release</p></li>
+<li><p><strong>authorized_users</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>csv_details</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.models.LocalCSVDetails" title="opendp.smartnoise.client.restclient.models.LocalCSVDetails"><em>LocalCSVDetails</em></a>) – </p></li>
+<li><p><strong>dataverse_details</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.models.DataverseDetails" title="opendp.smartnoise.client.restclient.models.DataverseDetails"><em>DataverseDetails</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.DatasetReadReleaseRequest">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">DatasetReadReleaseRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.DatasetReadReleaseRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>DatasetReadReleaseRequest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset_name</strong> (<em>str</em>) – The name for the dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.DatasetReadRequest">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">DatasetReadRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">budget</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.DatasetReadRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>DatasetReadRequest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_name</strong> (<em>str</em>) – The name for the dataset</p></li>
+<li><p><strong>budget</strong> (<em>float</em>) – Budget used by this read request</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.DataverseDetails">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">DataverseDetails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">local_metadata_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">token</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">schema</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.DataverseDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>DataverseDetails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>local_metadata_path</strong> (<em>str</em>) – </p></li>
+<li><p><strong>host</strong> (<em>str</em>) – Host of dataset, if dataverse</p></li>
+<li><p><strong>token</strong> (<em>str</em>) – The token for the dataverse</p></li>
+<li><p><strong>schema</strong> (<em>str</em>) – Schema of dataset, well formed json</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.ExecuterunOKResponse">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">ExecuterunOKResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.ExecuterunOKResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>ExecuterunOKResponse.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>result</strong> (<em>str</em>) – Json string result,  TODO release document</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.LocalCSVDetails">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">LocalCSVDetails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">local_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.LocalCSVDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>LocalCSVDetails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>local_path</strong> (<em>str</em>) – Path to the csv on disk</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.ProjectRunDetails">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">ProjectRunDetails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">project_uri</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.ProjectRunDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>ProjectRunDetails.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project_uri</strong> (<em>str</em>) – Git url of the project</p></li>
+<li><p><strong>params</strong> (<em>str</em>) – Input parameters of the project</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.RegisterOKResponse">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">RegisterOKResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.RegisterOKResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>RegisterOKResponse.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>result</strong> (<em>str</em>) – DatasetName</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">ReleaseDatasetDocument</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataset_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">budget</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">release_cost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">authorized_users</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">csv_details</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataverse_details</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.ReleaseDatasetDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>ReleaseDatasetDocument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_name</strong> (<em>str</em>) – The name for the dataset</p></li>
+<li><p><strong>dataset_type</strong> (<em>str</em>) – The type of the dataset</p></li>
+<li><p><strong>budget</strong> (<em>float</em>) – Available budget for the dataset registered</p></li>
+<li><p><strong>release_cost</strong> (<em>float</em>) – Cost of creating a release</p></li>
+<li><p><strong>authorized_users</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>csv_details</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.models.LocalCSVDetails" title="opendp.smartnoise.client.restclient.models.LocalCSVDetails"><em>LocalCSVDetails</em></a>) – </p></li>
+<li><p><strong>dataverse_details</strong> (<a class="reference internal" href="#opendp.smartnoise.client.restclient.models.DataverseDetails" title="opendp.smartnoise.client.restclient.models.DataverseDetails"><em>DataverseDetails</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.Secret">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">Secret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.Secret" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>Secret.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the secret</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The secret</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="opendp.smartnoise.client.restclient.models.SecretPutSuccess">
+<em class="property">class </em><code class="sig-prename descclassname">opendp.smartnoise.client.restclient.models.</code><code class="sig-name descname">SecretPutSuccess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#opendp.smartnoise.client.restclient.models.SecretPutSuccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msrest.serialization.Model</span></code></p>
+<p>SecretPutSuccess.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of the secret</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">OpenDP</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joshua Allen, Ethan Cowan, Christian Covington, Eduardo de Leon, Ira Globus-Harris, James Honaker, Jason Huang, Ellen Kraffmiller, Saniya Movahed, Michael Phelan, Raman Prasad, Michael Shoemate, Robert Treacy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/opendp.smartnoise.client.restclient.models.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
